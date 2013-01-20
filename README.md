@@ -33,7 +33,7 @@ clear 	B6F432D___your key____956AD8234 and write your api key .
 thers is some thing l should tell you , still api is down for some reason but test api is on and we can build our applications.
     static public $api_url = "http://api.steampowered.com/" ;
     static public $api_dota_name ="IDOTA2Match_205790";
-above lines is api url if you change http to https it will using https portocol to load data and it have more benifets than http like get more data from steam profiles .
+above lines is api url if you change http to https it will using https portocol to load data and it have more benefits than http like get more data from steam profiles .
 IDOTA2Match_205790 is test version of api so when the times come to use it then you should change it to IDOTA2Match_570 .
 
 ok that's it .
@@ -62,7 +62,7 @@ FAQ
 
 it's full implemented ? not still but i am working on it . and it doesn't support EconomySchema api for now .
 
-why cc copyright ? it still need more test and more devlopers to come so i need to introduce it and get helps .
+why cc copyright ? it still need more test and more developers to come so i need to introduce it and get helps .
 
 how about the framework speed ? it's just fine but dota 2 api is not working well 
 
