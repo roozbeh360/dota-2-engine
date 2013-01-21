@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US"><head><!-- Created by Artisteer v4.0.0.58475 -->
+    <meta charset="utf-8">
+    <title>full player object methods</title>
+    <meta name="viewport" content="initial-scale = 1.0, maximum-scale = 1.0, user-scalable = no, width = device-width">
+
+    <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <link rel="stylesheet" href="../style.css" media="screen">
+    <!--[if lte IE 7]><link rel="stylesheet" href="../style.ie7.css" media="screen" /><![endif]-->
+    <link rel="stylesheet" href="../style.responsive.css" media="all">
+
+
+    <script src="../jquery.js"></script>
+    <script src="../script.js"></script>
+    <script src="../script.responsive.js"></script>
+
+
+</head>
+<body>
+<div id="main">
+    <div class="sheet clearfix">
+<header class="header clearfix">
+
+
+    <div class="shapes">
+<h1 class="headline" data-left="1.23%">
+    <a href="#">Dota 2 Engine framework</a>
+</h1>
+
+
+            </div>
+
+<nav class="nav clearfix">
+    <ul class="hmenu"><li><a href="../introduction.html">introduction</a></li><li><a href="../manual.html">Manual</a><ul><li><a href="../manual/the-book.html">The book</a><ul><li><a href="../manual/the-book/directory-and-file-concepts.html">Directory and file concepts</a></li><li><a href="../manual/the-book/install-and-test-it.html">install and test it</a></li><li><a href="../manual/the-book/fetch-match-details.html">Fetch match details</a></li><li><a href="../manual/the-book/match-history.html">match history</a></li><li><a href="../manual/the-book/render-helpers.html">render helpers</a></li></ul></li><li><a href="../manual/development-book.html">development book</a><ul><li><a href="../manual/development-book/the-line.html">The line</a></li></ul></li></ul></li><li><a href="../refrence.html" class="active">Refrence</a><ul class="active"><li><a href="../refrence/full-account-object-methods.html">full account object methods</a></li><li><a href="../refrence/full-player-object-methods.html" class="active">full player object methods</a></li><li><a href="../refrence/full-match-details-object-methods.html">full match details object methods</a></li></ul></li></ul> 
+    </nav>
+
+                    
+</header>
+<div class="layout-wrapper clearfix">
+                <div class="content-layout">
+                    <div class="content-layout-row">
+                        <div class="layout-cell content clearfix"><article class="post article">
+                                <h2 class="postheader">full player object methods</h2>
+                                <div class="postcontent postcontent-0 clearfix"><p>$player-&gt;&lt;method&gt;</p>
+<p>&lt;method&gt; supported for $player object .</p>
+<ul style="font-family: Verdana, Arial, Tahoma, Calibri, Geneva, sans-serif; line-height: normal;">
+<li style="list-style-type: disc;"><span style="font-family: 'Courier New';">getAccount_id()</span>&nbsp;- the player's 32-bit Steam ID</li>
+<li style="list-style-type: disc;"><span style="font-family: 'Courier New';">get</span><span style="font-family: 'Courier New';">player_slot()</span>&nbsp;- an 8-bit unsigned int: if the left-most bit is set, the player was on dire. the two right-most bits represent the player slot (0-4)</li>
+<li style="list-style-type: disc;"><span style="font-family: 'Courier New';">getH</span><span style="font-family: 'Courier New';">ero_id()</span>&nbsp;- the numeric ID of the hero that the player used</li>
+<li style="list-style-type: disc;"><span style="font-family: 'Courier New';">getI</span><span style="font-family: 'Courier New';">tem_0()</span>&nbsp;- the numeric ID of the item that player had in their top-left slot</li>
+<li style="list-style-type: disc;"><span style="font-family: 'Courier New';">getI</span><span style="font-family: 'Courier New';">tem_1()</span>&nbsp;- the numeric ID of the item that player had in their top-center slot</li>
+<li style="list-style-type: disc;"><span style="font-family: 'Courier New';">getI</span><span style="font-family: 'Courier New';">tem_2()</span>&nbsp;- the numeric ID of the item that player had in their top-right slot</li>
+<li style="list-style-type: disc;"><span style="font-family: 'Courier New';">getI</span><span style="font-family: 'Courier New';">tem_3()</span>&nbsp;- the numeric ID of the item that player had in their bottom-left slot</li>
+<li style="list-style-type: disc;"><span style="font-family: 'Courier New';">getI</span><span style="font-family: 'Courier New';">tem_4()</span>&nbsp;- the numeric ID of the item that player had in their bottom-center slot</li>
+<li style="list-style-type: disc;"><span style="font-family: 'Courier New';">getI</span><span style="font-family: 'Courier New';">tem_5()</span>&nbsp;- the numeric ID of the item that player had in their bottom-right slot</li>
+<li style="list-style-type: disc;"><span style="font-family: 'Courier New';">getK</span><span style="font-family: 'Courier New';">ills()</span>&nbsp;- the number of kills the player got</li>
+<li style="list-style-type: disc;"><span style="font-family: 'Courier New';">getD</span><span style="font-family: 'Courier New';">eaths()</span>&nbsp;- the number of times the player died</li>
+<li style="list-style-type: disc;"><span style="font-family: 'Courier New';">getA</span><span style="font-family: 'Courier New';">ssists()</span>&nbsp;- the number of assists the player got</li>
+<li style="list-style-type: disc;"><span style="font-family: 'Courier New';">getL</span><span style="font-family: 'Courier New';">eaver_status()</span>&nbsp;- 0 if the player stayed in the match</li>
+<li style="list-style-type: disc;"><span style="font-family: 'Courier New';">getG</span><span style="font-family: 'Courier New';">old()</span>&nbsp;- the amount of gold the player had left at the end of the match</li>
+<li style="list-style-type: disc;"><span style="font-family: 'Courier New';">getL</span><span style="font-family: 'Courier New';">ast_hits()</span>&nbsp;- the number of times a player last-hit a creep</li>
+<li style="list-style-type: disc;"><span style="font-family: 'Courier New';">getD</span><span style="font-family: 'Courier New';">enies()</span>&nbsp;- the number of times a player denied a creep</li>
+<li style="list-style-type: disc;"><span style="font-family: 'Courier New';">getG</span><span style="font-family: 'Courier New';">old_per_min()</span>&nbsp;- the player's total gold/min</li>
+<li style="list-style-type: disc;"><span style="font-family: 'Courier New';">getX</span><span style="font-family: 'Courier New';">p_per_min()</span>&nbsp;- the player's total xp/min</li>
+<li style="list-style-type: disc;"><span style="font-family: 'Courier New';">getG</span><span style="font-family: 'Courier New';">old_spent()</span>&nbsp;- the total amount of gold the player spent over the entire match</li>
+<li style="list-style-type: disc;"><span style="font-family: 'Courier New';">getH</span><span style="font-family: 'Courier New';">ero_damage()</span>&nbsp;- the amount of damage the player dealt to heroes</li>
+<li style="list-style-type: disc;"><span style="font-family: 'Courier New';">getT</span><span style="font-family: 'Courier New';">ower_damage()</span>&nbsp;- the amount of damage the player dealt to towers</li>
+<li style="list-style-type: disc;"><span style="font-family: 'Courier New';">getH</span><span style="font-family: 'Courier New';">ero_healing()</span>&nbsp;- the amount of damage the player healed</li>
+<li style="list-style-type: disc;"><span style="font-family: 'Courier New';">getL</span><span style="font-family: 'Courier New';">evel()</span>&nbsp;- the player's final level</li>
+<li><span style="font-family: 'Courier New';">getA</span>ccount<span style="font-family: 'Courier New';">()</span>&nbsp;- return steam account type = object .&nbsp;&nbsp;for full method you can use on this object see :&nbsp;<a href="../refrence/full-account-object-methods.html">full account object methods</a><br></li>
+</ul>
+<p><br></p></div>
+</article></div>
+                    </div>
+                </div>
+            </div><footer class="footer clearfix">
+<p>Copyright © 2013. All Rights Reserved.<br></p>
+</footer>
+
+    </div>
+</div>
+
+
+</body></html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US"><head><!-- Created by Artisteer v4.0.0.58475 -->
+    <meta charset="utf-8">
+    <title>Fetch match details</title>
+    <meta name="viewport" content="initial-scale = 1.0, maximum-scale = 1.0, user-scalable = no, width = device-width">
+
+    <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <link rel="stylesheet" href="../../style.css" media="screen">
+    <!--[if lte IE 7]><link rel="stylesheet" href="../../style.ie7.css" media="screen" /><![endif]-->
+    <link rel="stylesheet" href="../../style.responsive.css" media="all">
+
+
+    <script src="../../jquery.js"></script>
+    <script src="../../script.js"></script>
+    <script src="../../script.responsive.js"></script>
+
+
+</head>
+<body>
+<div id="main">
+    <div class="sheet clearfix">
+<header class="header clearfix">
+
+
+    <div class="shapes">
+<h1 class="headline" data-left="1.23%">
+    <a href="#">Dota 2 Engine framework</a>
+</h1>
+
+
+            </div>
+
+<nav class="nav clearfix">
+    <ul class="hmenu"><li><a href="../../introduction.html">introduction</a></li><li><a href="../../manual.html" class="active">Manual</a><ul class="active"><li><a href="../../manual/the-book.html" class="active">The book</a><ul class="active"><li><a href="../../manual/the-book/directory-and-file-concepts.html">Directory and file concepts</a></li><li><a href="../../manual/the-book/install-and-test-it.html">install and test it</a></li><li><a href="../../manual/the-book/fetch-match-details.html" class="active">Fetch match details</a></li><li><a href="../../manual/the-book/match-history.html">match history</a></li><li><a href="../../manual/the-book/render-helpers.html">render helpers</a></li></ul></li><li><a href="../../manual/development-book.html">development book</a><ul><li><a href="../../manual/development-book/the-line.html">The line</a></li></ul></li></ul></li><li><a href="../../refrence.html">Refrence</a><ul><li><a href="../../refrence/full-account-object-methods.html">full account object methods</a></li><li><a href="../../refrence/full-player-object-methods.html">full player object methods</a></li><li><a href="../../refrence/full-match-details-object-methods.html">full match details object methods</a></li></ul></li></ul> 
+    </nav>
+
+                    
+</header>
+<div class="layout-wrapper clearfix">
+                <div class="content-layout">
+                    <div class="content-layout-row">
+                        <div class="layout-cell content clearfix"><article class="post article">
+                                <h2 class="postheader">Fetch match details</h2>
+                                <div class="postcontent postcontent-0 clearfix"><h3><span style="background-color: #FFFFFF; color: #000000;">Code :</span></h3>
+<p style="margin-top: 15px; margin-bottom: 15px; font-family: Helvetica, arial, freesans, clean, sans-serif; font-size: 14px; text-align: start; padding-left: 40px;">$doProcess = new doProcess();</p>
+<p style="margin-top: 15px; margin-bottom: 15px; font-family: Helvetica, arial, freesans, clean, sans-serif; font-size: 14px; text-align: start; padding-left: 40px;">&nbsp;$match = $doProcess-&gt;fetchMatchDetailsById(1455138);</p>
+<p style="margin-top: 15px; margin-bottom: 15px; font-family: Helvetica, arial, freesans, clean, sans-serif; font-size: 14px; text-align: start; padding-left: 40px;">f($match){</p>
+<p style="margin-top: 15px; margin-bottom: 15px; font-family: Helvetica, arial, freesans, clean, sans-serif; font-size: 14px; text-align: start; padding-left: 60px;">$players = $match-&gt;getPlayers(); &nbsp;</p>
+<p style="margin-top: 15px; margin-bottom: 15px; font-family: Helvetica, arial, freesans, clean, sans-serif; font-size: 14px; text-align: start; padding-left: 60px;">echo $players&#91;9&#93;-&gt;getAccount_id() ;</p>
+<p style="margin-top: 15px; margin-bottom: 15px; font-family: Helvetica, arial, freesans, clean, sans-serif; font-size: 14px; text-align: start; padding-left: 60px;">echo $players&#91;9&#93;-&gt;getHero()-&gt;getName();</p>
+<p style="margin-top: 15px; margin-bottom: 15px; font-family: Helvetica, arial, freesans, clean, sans-serif; font-size: 14px; text-align: start; padding-left: 60px;">&nbsp;$player = $players&#91;9&#93; ;</p>
+<p style="margin-top: 15px; margin-bottom: 15px; font-family: Helvetica, arial, freesans, clean, sans-serif; font-size: 14px; text-align: start; padding-left: 60px;">// echo&nbsp;&nbsp;$players&#91;9&#93;-&gt;getAccount()-&gt;getSteamid();</p>
+<p style="margin-top: 15px; margin-bottom: 15px; font-family: Helvetica, arial, freesans, clean, sans-serif; font-size: 14px; text-align: start; padding-left: 60px;">echo $player-&gt;getAccount()-&gt;getSteamid();</p>
+<p style="margin-top: 15px; margin-bottom: 15px; font-family: Helvetica, arial, freesans, clean, sans-serif; font-size: 14px; text-align: start; padding-left: 60px;">echo $player-&gt;getAccount()-&gt;getPersonaname();</p>
+<p style="margin-top: 15px; margin-bottom: 15px; font-family: Helvetica, arial, freesans, clean, sans-serif; font-size: 14px; text-align: start; padding-left: 40px;">}</p>
+<h3><span style="color: #000000; background-color: #FFFFFF;">but how :</span></h3>
+<p><span style="font-family: Helvetica, arial, freesans, clean, sans-serif; font-size: 14px; text-align: start;">line 1 : $doProcess = new doProcess(); makes a doProcess object to handle our requests .&nbsp;</span></p>
+<p><span style="font-family: Helvetica, arial, freesans, clean, sans-serif; font-size: 14px; text-align: start;">line 2 : ask process system to find and grab match from dota 2 server &nbsp;.</span><span style="color: #000000; background-color: #FFFFFF;"><br></span></p>
+<p><span style="font-family: Helvetica, arial, freesans, clean, sans-serif; font-size: 14px; text-align: start;">line 3 : if there were a match then get it informations .</span></p>
+<p><span style="font-family: Helvetica, arial, freesans, clean, sans-serif; font-size: 14px; text-align: start;">$players = $match-&gt;getPlayers();&nbsp;</span></p>
+<p><span style="font-family: Helvetica, arial, freesans, clean, sans-serif; font-size: 14px; text-align: start;">get players from match it indexed from 0 - 9 and it 's array object</span></p>
+<p><span style="font-family: Helvetica, arial, freesans, clean, sans-serif; font-size: 14px; text-align: start;">you can use foreach or some thing like&nbsp;$players&#91;9&#93; to get it contents , 2 objects attach to player&nbsp;</span></p>
+<p style="text-align: start;"> </p>
+<ol>
+<li><span style="font-family: Helvetica, arial, freesans, clean, sans-serif; font-size: 14px;">hero</span></li>
+<li>account&nbsp;</li>
+</ol>
+<p><span style="color: rgb(173, 173, 173);">hero just have 2 methods getId() and getName() for now but account have more methods depends on your&nbsp;</span><span style="color: rgb(204, 204, 204); font-size: 18px; line-height: 21px;">Public/Private</span> <span style="color: rgb(173, 173, 173);">request you are selected on confing file .</span></p>
+<p><span style="color: rgb(173, 173, 173);">for more information on match object method see :&nbsp;<a href="../../refrence/full-match-details-object-methods.html">full match details object methods</a></span></p>
+<p><span style="font-family: Helvetica, arial, freesans, clean, sans-serif; font-size: 14px;">&nbsp;</span><br></p></div>
+</article></div>
+                    </div>
+                </div>
+            </div><footer class="footer clearfix">
+<p>Copyright © 2013. All Rights Reserved.<br></p>
+</footer>
+
+    </div>
+</div>
+
+
+</body></html>

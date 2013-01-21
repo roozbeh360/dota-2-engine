@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US"><head><!-- Created by Artisteer v4.0.0.58475 -->
+    <meta charset="utf-8">
+    <title>full account object methods</title>
+    <meta name="viewport" content="initial-scale = 1.0, maximum-scale = 1.0, user-scalable = no, width = device-width">
+
+    <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <link rel="stylesheet" href="../style.css" media="screen">
+    <!--[if lte IE 7]><link rel="stylesheet" href="../style.ie7.css" media="screen" /><![endif]-->
+    <link rel="stylesheet" href="../style.responsive.css" media="all">
+
+
+    <script src="../jquery.js"></script>
+    <script src="../script.js"></script>
+    <script src="../script.responsive.js"></script>
+
+
+</head>
+<body>
+<div id="main">
+    <div class="sheet clearfix">
+<header class="header clearfix">
+
+
+    <div class="shapes">
+<h1 class="headline" data-left="1.23%">
+    <a href="#">Dota 2 Engine framework</a>
+</h1>
+
+
+            </div>
+
+<nav class="nav clearfix">
+    <ul class="hmenu"><li><a href="../introduction.html">introduction</a></li><li><a href="../manual.html">Manual</a><ul><li><a href="../manual/the-book.html">The book</a><ul><li><a href="../manual/the-book/directory-and-file-concepts.html">Directory and file concepts</a></li><li><a href="../manual/the-book/install-and-test-it.html">install and test it</a></li><li><a href="../manual/the-book/fetch-match-details.html">Fetch match details</a></li><li><a href="../manual/the-book/match-history.html">match history</a></li><li><a href="../manual/the-book/render-helpers.html">render helpers</a></li></ul></li><li><a href="../manual/development-book.html">development book</a><ul><li><a href="../manual/development-book/the-line.html">The line</a></li></ul></li></ul></li><li><a href="../refrence.html" class="active">Refrence</a><ul class="active"><li><a href="../refrence/full-account-object-methods.html" class="active">full account object methods</a></li><li><a href="../refrence/full-player-object-methods.html">full player object methods</a></li><li><a href="../refrence/full-match-details-object-methods.html">full match details object methods</a></li></ul></li></ul> 
+    </nav>
+
+                    
+</header>
+<div class="layout-wrapper clearfix">
+                <div class="content-layout">
+                    <div class="content-layout-row">
+                        <div class="layout-cell content clearfix"><article class="post article">
+                                <h2 class="postheader">full account object methods</h2>
+                                <div class="postcontent postcontent-0 clearfix"><p>$account-&gt;&lt;method&gt;</p>
+<p>&lt;method&gt; supported for $account object .</p>
+<p><br></p>
+<p><span style="font-size: 18px; line-height: 21px;">Public Data when you are using http in config/config.php $api_url :</span><br></p>
+<ul>
+<li>getSteamid() - 64bit SteamID of the user</li>
+<li>getPersonaname() - The player's persona name (display name)</li>
+<li>getProfileurl(../images/) - The full URL of the player's Steam Community profile.</li>
+<li>getAvatar() - The full URL of the player's 32x32px avatar. If the user hasn't configured an avatar, this will be the default ? avatar.</li>
+<li>getAvatarmedium() - The full URL of the player's 64x64px avatar. If the user hasn't configured an avatar, this will be the default ? avatar.</li>
+<li>getAvatarfull() - The full URL of the player's 184x184px avatar. If the user hasn't configured an avatar, this will be the default ? avatar.</li>
+<li>getPersonastate() - The user's current status. 0 - Offline, 1 - Online, 2 - Busy, 3 - Away, 4 - Snooze, 5 - looking to trade, 6 - looking to play.</li>
+<li>getCommunityvisibilitystate() - One of five values: 1-"Private", 2-"Friends Only",3- "Friends of Friends", 4 - "Users Only", 5 - "Public".</li>
+<li>getProfilestate() - If set, indicates the user has a community profile configured (will be set to '1')</li>
+<li>getLastlogoff() - The last time the user was online, in unix time.</li>
+<li>getCommentpermission() - If set, indicates the profile allows public comments.<br></li>
+</ul>
+<h4>Private Data when you are using https in config/config.php $api_url + above methods :<br></h4>
+<ul>
+<li>getRealname() - The player's "Real Name", if they have set it.</li>
+<li>getPrimaryclanid() - The player's primary group, as configured in their Steam Community profile.</li>
+<li>getTimecreated() - The time the player's account was created.</li>
+<li>getGameid() - If the user is currently in-game, this value will be returned and set to the gameid of that game.</li>
+<li>getGameserverip() - The ip and port of the game server the user is currently playing on</li>
+<li>getGameextrainfo() - If the user is currently in-game, this will be the name of the game they are playing.</li>
+<li>getCityid() - This value will be removed in a future update (see loccityid)</li>
+<li>getOccountrycode() - If set on the user's Steam Community profile, The user's country of residence, 2-character ISO country code</li>
+<li>getLocstatecode() - If set on the user's Steam Community profile, The user's state of residence</li>
+<li>getLoccityid() - An internal code indicating the user's city of residence.</li>
+</ul>
+<p><br></p></div>
+</article></div>
+                    </div>
+                </div>
+            </div><footer class="footer clearfix">
+<p>Copyright © 2013. All Rights Reserved.<br></p>
+</footer>
+
+    </div>
+</div>
+
+
+</body></html>

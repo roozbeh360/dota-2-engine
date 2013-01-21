@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US"><head><!-- Created by Artisteer v4.0.0.58475 -->
+    <meta charset="utf-8">
+    <title>install and test it</title>
+    <meta name="viewport" content="initial-scale = 1.0, maximum-scale = 1.0, user-scalable = no, width = device-width">
+
+    <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <link rel="stylesheet" href="../../style.css" media="screen">
+    <!--[if lte IE 7]><link rel="stylesheet" href="../../style.ie7.css" media="screen" /><![endif]-->
+    <link rel="stylesheet" href="../../style.responsive.css" media="all">
+
+
+    <script src="../../jquery.js"></script>
+    <script src="../../script.js"></script>
+    <script src="../../script.responsive.js"></script>
+
+
+</head>
+<body>
+<div id="main">
+    <div class="sheet clearfix">
+<header class="header clearfix">
+
+
+    <div class="shapes">
+<h1 class="headline" data-left="1.23%">
+    <a href="#">Dota 2 Engine framework</a>
+</h1>
+
+
+            </div>
+
+<nav class="nav clearfix">
+    <ul class="hmenu"><li><a href="../../introduction.html">introduction</a></li><li><a href="../../manual.html" class="active">Manual</a><ul class="active"><li><a href="../../manual/the-book.html" class="active">The book</a><ul class="active"><li><a href="../../manual/the-book/directory-and-file-concepts.html">Directory and file concepts</a></li><li><a href="../../manual/the-book/install-and-test-it.html" class="active">install and test it</a></li><li><a href="../../manual/the-book/fetch-match-details.html">Fetch match details</a></li><li><a href="../../manual/the-book/match-history.html">match history</a></li><li><a href="../../manual/the-book/render-helpers.html">render helpers</a></li></ul></li><li><a href="../../manual/development-book.html">development book</a><ul><li><a href="../../manual/development-book/the-line.html">The line</a></li></ul></li></ul></li><li><a href="../../refrence.html">Refrence</a><ul><li><a href="../../refrence/full-account-object-methods.html">full account object methods</a></li><li><a href="../../refrence/full-player-object-methods.html">full player object methods</a></li><li><a href="../../refrence/full-match-details-object-methods.html">full match details object methods</a></li></ul></li></ul> 
+    </nav>
+
+                    
+</header>
+<div class="layout-wrapper clearfix">
+                <div class="content-layout">
+                    <div class="content-layout-row">
+                        <div class="layout-cell content clearfix"><article class="post article">
+                                <h2 class="postheader">install and test it</h2>
+                                <div class="postcontent postcontent-0 clearfix"><p><span style="font-family: Helvetica, arial, freesans, clean, sans-serif; font-size: 28px; font-weight: bold; line-height: 33px; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">install</span><br></p>
+<p style="margin-top: 0px; margin-bottom: 15px; font-family: Helvetica, arial, freesans, clean, sans-serif; font-size: 14px; text-align: start;">first of all you should enable these extentions in php.ini or on your host .</p>
+<p style="margin-top: 0px; margin-bottom: 15px; font-family: Helvetica, arial, freesans, clean, sans-serif; font-size: 14px; text-align: start;">&nbsp;find these lines and remove ; from beginning .</p>
+<p style="margin-top: 15px; margin-bottom: 15px; font-family: Helvetica, arial, freesans, clean, sans-serif; font-size: 14px; text-align: start;">;extension=php_curl.dll ;</p>
+<p style="margin-top: 15px; margin-bottom: 15px; font-family: Helvetica, arial, freesans, clean, sans-serif; font-size: 14px; text-align: start;">extension=php_gmp.dll&nbsp;</p>
+<p style="margin-top: 15px; margin-bottom: 15px; font-family: Helvetica, arial, freesans, clean, sans-serif; font-size: 14px; text-align: start;">like this :&nbsp;</p>
+<p style="margin-top: 15px; margin-bottom: 15px; font-family: Helvetica, arial, freesans, clean, sans-serif; font-size: 14px; text-align: start;">extension=php_curl.dll</p>
+<p style="margin-top: 15px; margin-bottom: 15px; font-family: Helvetica, arial, freesans, clean, sans-serif; font-size: 14px; text-align: start;">&nbsp;extension=php_gmp.dll</p>
+<p style="margin-top: 15px; margin-bottom: 15px; font-family: Helvetica, arial, freesans, clean, sans-serif; font-size: 14px; text-align: start;">then you must get api key from valve :</p>
+<p style="margin-top: 15px; margin-bottom: 15px; font-family: Helvetica, arial, freesans, clean, sans-serif; font-size: 14px; text-align: start;"><a href="http://steamcommunity.com/dev/apikey" style="color: rgb(65, 131, 196);">http://steamcommunity.com/dev/apikey</a></p>
+<p style="margin-top: 15px; margin-bottom: 15px; font-family: Helvetica, arial, freesans, clean, sans-serif; font-size: 14px; text-align: start;">at last edit action/config/config.php</p>
+<p style="margin-top: 15px; margin-bottom: 15px; font-family: Helvetica, arial, freesans, clean, sans-serif; font-size: 14px; text-align: start;">&nbsp;static public $api_key = "B6F432D___your key____956AD8234";&nbsp;</p>
+<p style="margin-top: 15px; margin-bottom: 15px; font-family: Helvetica, arial, freesans, clean, sans-serif; font-size: 14px; text-align: start;">clear B6F432D___your key____956AD8234 and write your api key .</p>
+<p style="margin-top: 15px; margin-bottom: 15px; font-family: Helvetica, arial, freesans, clean, sans-serif; font-size: 14px; text-align: start;">thers is some thing l should tell you , still api is down for some reason but test api is on and we can build our applications. static public $api_url = "<a href="http://api.steampowered.com/" style="color: rgb(65, 131, 196);">http://api.steampowered.com/</a>" ; static public $api_dota_name ="IDOTA2Match_205790"; above lines is api url if you change http to https it will using https portocol to load data and it have more benefits than http like get more data from steam profiles . IDOTA2Match_205790 is test version of api so when the times come to use it then you should change it to IDOTA2Match_570 .</p>
+<p style="margin-top: 15px; margin-bottom: 15px; font-family: Helvetica, arial, freesans, clean, sans-serif; font-size: 14px; text-align: start;">ok that's it .</p>
+<p><span style="font-family: Helvetica, arial, freesans, clean, sans-serif; font-size: 28px; font-weight: bold; line-height: 33px; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);">useage :</span><br></p>
+<p style="margin-top: 0px; margin-bottom: 15px; font-family: Helvetica, arial, freesans, clean, sans-serif; font-size: 14px; text-align: start;">it's very easy just add engine.php to your php file and load objects .</p>
+<p style="margin-top: 15px; margin-bottom: 15px; font-family: Helvetica, arial, freesans, clean, sans-serif; font-size: 14px; text-align: start;">require_once 'engine.php' ;</p>
+<p style="margin-top: 15px; margin-bottom: 15px; font-family: Helvetica, arial, freesans, clean, sans-serif; font-size: 14px; text-align: start;">$doProcess = new doProcess();</p>
+<p style="margin-top: 15px; margin-bottom: 15px; font-family: Helvetica, arial, freesans, clean, sans-serif; font-size: 14px; text-align: start;">&nbsp;$match = $doProcess-&gt;fetchMatchDetailsById(1455138);</p>
+<p style="margin-top: 15px; margin-bottom: 15px; font-family: Helvetica, arial, freesans, clean, sans-serif; font-size: 14px; text-align: start;">f($match){</p>
+<p style="margin-top: 15px; margin-bottom: 15px; padding-left: 20px; font-family: Helvetica, arial, freesans, clean, sans-serif; font-size: 14px; text-align: start;">echo $match-&gt;<span style="color: rgb(173, 173, 173); font-family: 'Courier New'; font-size: 13px; text-align: left;">getRadiant_win()</span>;</p>
+<p style="margin-top: 15px; margin-bottom: 15px; font-family: Helvetica, arial, freesans, clean, sans-serif; font-size: 14px; text-align: start;">}<br></p>
+<p style="margin-top: 15px; margin-bottom: 15px; font-family: Helvetica, arial, freesans, clean, sans-serif; font-size: 14px; text-align: start;">you are getting match details by using simple method named&nbsp;fetchMatchDetailsById($match_id);</p>
+<p style="margin-top: 15px; margin-bottom: 15px; font-family: Helvetica, arial, freesans, clean, sans-serif; font-size: 14px; text-align: start;">it takes match id and refers and complex object that contains all data you need .</p>
+<p style="margin-top: 15px; margin-bottom: 15px; font-family: Helvetica, arial, freesans, clean, sans-serif; font-size: 14px; text-align: start;">there are many method and tools it giving to you so feel free to test any of it .</p>
+<p style="margin-top: 15px; margin-bottom: 15px; font-family: Helvetica, arial, freesans, clean, sans-serif; font-size: 14px; text-align: start;">for full match details objects methods see :&nbsp;<a href="../../refrence/full-match-details-object-methods.html">full match details object methods</a></p>
+<p><br></p>
+<p><br></p></div>
+</article></div>
+                    </div>
+                </div>
+            </div><footer class="footer clearfix">
+<p>Copyright © 2013. All Rights Reserved.<br></p>
+</footer>
+
+    </div>
+</div>
+
+
+</body></html>

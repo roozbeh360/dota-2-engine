@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US"><head><!-- Created by Artisteer v4.0.0.58475 -->
+    <meta charset="utf-8">
+    <title>full match details object methods</title>
+    <meta name="viewport" content="initial-scale = 1.0, maximum-scale = 1.0, user-scalable = no, width = device-width">
+
+    <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <link rel="stylesheet" href="../style.css" media="screen">
+    <!--[if lte IE 7]><link rel="stylesheet" href="../style.ie7.css" media="screen" /><![endif]-->
+    <link rel="stylesheet" href="../style.responsive.css" media="all">
+
+
+    <script src="../jquery.js"></script>
+    <script src="../script.js"></script>
+    <script src="../script.responsive.js"></script>
+
+
+</head>
+<body>
+<div id="main">
+    <div class="sheet clearfix">
+<header class="header clearfix">
+
+
+    <div class="shapes">
+<h1 class="headline" data-left="1.23%">
+    <a href="#">Dota 2 Engine framework</a>
+</h1>
+
+
+            </div>
+
+<nav class="nav clearfix">
+    <ul class="hmenu"><li><a href="../introduction.html">introduction</a></li><li><a href="../manual.html">Manual</a><ul><li><a href="../manual/the-book.html">The book</a><ul><li><a href="../manual/the-book/directory-and-file-concepts.html">Directory and file concepts</a></li><li><a href="../manual/the-book/install-and-test-it.html">install and test it</a></li><li><a href="../manual/the-book/fetch-match-details.html">Fetch match details</a></li><li><a href="../manual/the-book/match-history.html">match history</a></li><li><a href="../manual/the-book/render-helpers.html">render helpers</a></li></ul></li><li><a href="../manual/development-book.html">development book</a><ul><li><a href="../manual/development-book/the-line.html">The line</a></li></ul></li></ul></li><li><a href="../refrence.html" class="active">Refrence</a><ul class="active"><li><a href="../refrence/full-account-object-methods.html">full account object methods</a></li><li><a href="../refrence/full-player-object-methods.html">full player object methods</a></li><li><a href="../refrence/full-match-details-object-methods.html" class="active">full match details object methods</a></li></ul></li></ul> 
+    </nav>
+
+                    
+</header>
+<div class="layout-wrapper clearfix">
+                <div class="content-layout">
+                    <div class="content-layout-row">
+                        <div class="layout-cell content clearfix"><article class="post article">
+                                <h2 class="postheader">full match details object methods</h2>
+                                <div class="postcontent postcontent-0 clearfix"><p>$match-&gt;&lt;method&gt;</p>
+
+<p>&lt;method&gt; supported for $match object :</p>
+
+<ul style="font-family: Verdana, Arial, Tahoma, Calibri, Geneva, sans-serif; line-height: normal;">
+
+<li style="list-style-type: disc;">getPlayers()&nbsp;- returns all players in array object . for full method you can use on each object see :&nbsp;<a href="/refrence/full-player-object-methods">full player object methods</a></li>
+
+<li><span style="font-family: 'Courier New';">getSeason()</span>&nbsp;- ????????<br></li>
+
+<li style="list-style-type: disc;"><span style="font-family: 'Courier New';">getRadiant_win()</span>&nbsp;- true if radiant won, false otherwise</li>
+
+<li style="list-style-type: disc;"><span style="font-family: 'Courier New';">getDuration()</span>&nbsp;- the total time in seconds the match ran for</li>
+
+<li style="list-style-type: disc;"><span style="font-family: 'Courier New';">getStarttime()</span>&nbsp;- date in UTC seconds since Jan 1, 1970 (unix time format)</li>
+
+<li style="list-style-type: disc;"><span style="font-family: 'Courier New';">getMatch_id()</span>&nbsp;- the numeric match ID</li>
+
+<li style="list-style-type: disc;"><span style="font-family: 'Courier New';">getT</span><span style="font-family: 'Courier New';">ower_status_radiant()</span>&nbsp;- an 11-bit unsinged int: see&nbsp;<a href="http://dev.dota2.com/showthread.php?t=57234" target="_blank" style="color: rgb(65, 115, 148);">THIS THREAD</a></li>
+
+<li style="list-style-type: disc;"><span style="font-family: 'Courier New';">getT</span><span style="font-family: 'Courier New';">ower_status_dire()</span>&nbsp;- an 11-bit unsinged int: see&nbsp;<a href="http://dev.dota2.com/showthread.php?t=57234" target="_blank" style="color: rgb(65, 115, 148);">THIS THREAD</a></li>
+
+<li style="list-style-type: disc;"><span style="font-family: 'Courier New';">getB</span><span style="font-family: 'Courier New';">arracks_status_radiant()</span>&nbsp;- a 6-bit unsinged int: see&nbsp;<a href="http://dev.dota2.com/showthread.php?t=57234" target="_blank" style="color: rgb(65, 115, 148);">THIS THREAD</a></li>
+
+<li style="list-style-type: disc;"><span style="font-family: 'Courier New';">getB</span><span style="font-family: 'Courier New';">arracks_status_radiant()</span>&nbsp;- a 6-bit unsinged int: see&nbsp;<a href="http://dev.dota2.com/showthread.php?t=57234" target="_blank" style="color: rgb(65, 115, 148);">THIS THREAD</a></li>
+
+<li style="list-style-type: disc;"><span style="font-family: 'Courier New';">getC</span><span style="font-family: 'Courier New';">luster()</span>&nbsp;-&nbsp;</li>
+
+<li style="list-style-type: disc;"><span style="font-family: 'Courier New';">getF</span><span style="font-family: 'Courier New';">irst_blood_time()</span>&nbsp;- the total time in seconds at which first blood occurred</li>
+
+<li style="list-style-type: disc;"><span style="font-family: 'Courier New';">getR</span><span style="font-family: 'Courier New';">eplay_salt()</span>&nbsp;-&nbsp;</li>
+
+<li style="list-style-type: disc;"><span style="font-family: 'Courier New';">getL</span><span style="font-family: 'Courier New';">obby_type()</span>&nbsp;- the type of lobby (0 for human matchmaking, 1 for co-op bot)</li>
+
+<li style="list-style-type: disc;"><span style="font-family: 'Courier New';">getH</span><span style="font-family: 'Courier New';">uman_players()</span>&nbsp;- the number of human players in the match</li>
+
+<li style="list-style-type: disc;"><span style="font-family: 'Courier New';">getL</span><span style="font-family: 'Courier New';">eagueid()</span>&nbsp;- the leauge this match is from</li>
+
+<li style="list-style-type: disc;"><span style="font-family: 'Courier New';">getP</span><span style="font-family: 'Courier New';">ositive_votes()</span>&nbsp;- the number of thumbs up the game has received</li>
+
+<li style="list-style-type: disc;"><span style="font-family: 'Courier New';">getP</span><span style="font-family: 'Courier New';">ositive_votes()</span>&nbsp;- the number of thumbs up the game has received</li>
+
+<li>getGame_mode() - return game mode&nbsp;<br></li>
+
+<li>getStart_time() - match start time</li>
+
+</ul>
+
+<p><br></p></div>
+</article></div>
+                    </div>
+                </div>
+            </div><footer class="footer clearfix">
+<p>Copyright © 2013. All Rights Reserved.<br></p>
+</footer>
+
+    </div>
+</div>
+
+
+</body></html>
