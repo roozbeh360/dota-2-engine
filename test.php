@@ -2,10 +2,10 @@
 
 require_once 'engine.php' ;
 
+// both api and api test is down !
+// test it on you local file 
+// change action/config/config.php to use local file 
 
-
-
-// come from action/config/config.php
 $doProcess = new doProcess();
 $match = $doProcess->fetchMatchDetailsById(1455138);
 
@@ -25,16 +25,10 @@ $player = $players[9] ;
 echo $player->getAccount()->getSteamid();
 echo $player->getAccount()->getPersonaname();	
 }
-else echo 'not ss found' ; 
+else echo 'not found' ; 
 echo '</br>';
 
-$matchHistory = $doProcess->fetchMatchHistory('Koomorang');
-if($matchHistory)
-$array = $matchHistory->getMatches();
-foreach($array as $match){
-	$playerss =  $match->getPlayers();
-	echo $playerss[9]->getAccount_id() ;
+$history = $doProcess->fetchMatchHistoryByPlayerName('avtana');
+if($history){
+	print_r($history) ;
 }
-	
-//print_r($matchHistory);
-//else echo 'error of get matches' ;

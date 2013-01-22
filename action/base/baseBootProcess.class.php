@@ -42,14 +42,57 @@ abstract class BaseDoProcess extends coreBootProcess
 		return self::buildPlayerSummaries($query) ;
 	}
 	
-	public function fetchMatchHistory($request)
+	//match history methods
+	//full support for that needed 
+	
+	public function fetchMatchHistoryByPlayerName($player_name,$start_at_match_id = null,$matches_requested = null)
 	{
-		$query = self::buildMatchHistoryQuery($request);
+		$query = self::buildMatchHistoryQuery($player_name,null,null,null,null,null,null,$start_at_match_id,$matches_requested);
 		return self::buildMatchHistory($query) ;
 	}
 	
-
-
-
+	public function fetchMatchHistoryByAccountId($account_id,$start_at_match_id = null,$matches_requested = null)
+	{
+		$query = self::buildMatchHistoryQuery(null,binaryConvert::make64bit($account_id),null,null,null,null,null,$start_at_match_id,$matches_requested);
+		return self::buildMatchHistory($query) ;
+	}
+	
+	public function fetchMatchHistoryByHeroId($hero_id,$start_at_match_id = null,$matches_requested = null)
+	{
+		$query = self::buildMatchHistoryQuery(null,null,$hero_id,null,null,null,null,$start_at_match_id,$matches_requested);
+		return self::buildMatchHistory($query) ;
+	}
+	
+	public function fetchMatchHistoryBySkill($skill,$start_at_match_id = null,$matches_requested = null)
+	{
+		$query = self::buildMatchHistoryQuery(null,null,null,$skill,null,null,null,$start_at_match_id,$matches_requested);
+		return self::buildMatchHistory($query) ;
+	}
+	
+	public function fetchMatchHistoryByDate($date_min,$date_max,$start_at_match_id = null,$matches_requested = null)
+	{
+		$query = self::buildMatchHistoryQuery(null,null,null,null,$date_min,$date_max,null,$start_at_match_id,$matches_requested);
+		return self::buildMatchHistory($query) ;
+	}
+	
+	public function fetchMatchHistoryByDateMin($date_min,$start_at_match_id = null,$matches_requested = null)
+	{
+		$query = self::buildMatchHistoryQuery(null,null,null,null,$date_min,null,null,$start_at_match_id,$matches_requested);
+		return self::buildMatchHistory($query) ;
+	}
+	
+	public function fetchMatchHistoryByDateMax($date_max,$start_at_match_id = null,$matches_requested = null)
+	{
+		$query = self::buildMatchHistoryQuery(null,null,null,null,null,$date_max,null,$start_at_match_id,$matches_requested);
+		return self::buildMatchHistory($query) ;
+	}
+	
+	public function fetchMatchHistoryByLeagueId($league_id,$start_at_match_id = null,$matches_requested = null)
+	{
+		$query = self::buildMatchHistoryQuery(null,null,null,null,null,null,$league_id,$start_at_match_id,$matches_requested);
+		return self::buildMatchHistory($query) ;
+	} 
+	
+	
 	
 }
