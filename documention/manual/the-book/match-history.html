@@ -41,7 +41,77 @@
                     <div class="content-layout-row">
                         <div class="layout-cell content clearfix"><article class="post article">
                                 <h2 class="postheader">Match history</h2>
-                                <div class="postcontent postcontent-0 clearfix"><p>i am working on that</p></div>
+                                <div class="postcontent postcontent-0 clearfix">
+                                	<h3>
+                                	match history contains few method to retrive .see example :
+                                	
+                                	
+                                	
+								</h3>	
+                                	<p style=" text-align: start; padding-left: 40px;">$doProcess = new doProcess();</p>
+<p style=" text-align: start; padding-left: 40px;">&nbsp;$matchHistory = $doProcess-&gt;fetchMatchHistoryByPlayerName('avtana',null,25);</p>
+<p style=" text-align: start; padding-left: 40px;">f($matchHistory){</p>
+<p style=" text-align: start; padding-left: 60px;">echo $matchHistory-&gt;getStatus(); &nbsp;</p>
+<p style=" text-align: start; padding-left: 60px;">echo $matchHistory-&gt;getNum_results() ;</p>
+<p style=" text-align: start; padding-left: 60px;">echo $matchHistory-&gt;setResults_remaining();</p>
+<p style=" text-align: start; padding-left: 60px;">echo $matchHistory-&gt;getTotal_results();</p>
+<p style=" text-align: start; padding-left: 60px;"></p>
+<p style=" text-align: start; padding-left: 60px;">print_r($matchHistory-&gt;getMatches) </p>
+
+<p style=" text-align: start; padding-left: 40px;">}</p>
+
+                                <h3>
+                                	we have varity off methods to fetch history :
+								</h3>	
+                                	
+                                	<li><p style=" text-align: start; padding-left: 40px;">$doProcess-&gt;fetchMatchHistoryByPlayerName($player_name,$start_at_match_id,$matches_requested)</p></li>
+                                	<li><p style=" text-align: start; padding-left: 40px;">$doProcess-&gt;fetchMatchHistoryByAccountId($account_id,$start_at_match_id,$matches_requested)</p></li>
+                                	<li><p style=" text-align: start; padding-left: 40px;">$doProcess-&gt;fetchMatchHistoryByHeroId($hero_id,$start_at_match_id,$matches_requested)</p></li>
+                                	<li><p style=" text-align: start; padding-left: 40px;">$doProcess-&gt;fetchMatchHistoryBySkill($skill,$start_at_match_id,$matches_requested)</p></li>
+                                	<li><p style=" text-align: start; padding-left: 40px;">$doProcess-&gt;fetchMatchHistoryByDate($date_min,$date_max,$start_at_match_id,$matches_requested)</p></li>
+                                	<li><p style=" text-align: start; padding-left: 40px;">$doProcess-&gt;fetchMatchHistoryByDateMin($date_min,$start_at_match_id,$matches_requested)</p></li>
+                                	<li><p style=" text-align: start; padding-left: 40px;">$doProcess-&gt;fetchMatchHistoryByDateMax($date_max,$start_at_match_id,$matches_requested)</p></li>
+                                	<li><p style=" text-align: start; padding-left: 40px;">$doProcess-&gt;fetchMatchHistoryByLeagueId($league_id,$start_at_match_id,$matches_requested)</p></li>
+
+                                	<p>
+                                	they are all clear by there names what they are donig .
+								</p>
+								<h4>
+                                	and returned object have these methods :
+								</h4>
+								<ul>
+								<li>$matchHistory-&gt;getStatus() - result status</li>
+								<li>$matchHistory-&gt;getNum_results() - the number of results contained in this response </li>
+								<li>$matchHistory-&gt;getTotal_results() - the total number of results for this particular query [(total_results / num_results) = total_num_pages]</li>
+								<li>$matchHistory-&gt;getResults_remaining() - the number of results left for this query [(results_remaining / num_results) = remaining_num_pages]</li>
+								<li>$matchHistory-&gt;getMatches() - an array of num_results matches:
+									
+									<br />
+									<h4>each match support only these methods :</h4>
+									
+
+
+									<ul>
+									<li>$match-&gt;getMatch_id() - the numeric match ID</li>
+									<li>$match-&gt;getStart_time() - date in UTC seconds since Jan 1, 1970 (unix time format)</li>
+									<li>$match-&gt;getLobby_type() - the type of lobby (0 for human matchmaking, 1 for co-op bot)</li>
+									<li>$match-&gt;getPlayers() - an array of players:
+										<ul>
+										<h4>each player support only these methods :</h4>
+										<li>$player-&gt;getAccount_id() - the player's 32-bit Steam ID</li>
+										<li>$player-&gt;getPlayer_slot() - an 8-bit number: if the left-most bit is set, the player was on dire. the two right-most bits represent the player slot (0-4)</li>
+										<li>$player-&gt;getHero_id() - the numeric ID of the hero that the player used</li>
+										<li>$player-&gt;getHero() - the hero object </li>
+										</ul>
+
+										</li>
+									</ul>
+									
+									
+									</li>
+							
+								</ul>
+                                </div>
 </article></div>
                     </div>
                 </div>
