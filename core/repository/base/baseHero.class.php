@@ -15,7 +15,7 @@ abstract class baseHero {
 	function __constract($id = null,$name = null)
 	{
 		$this->id = $id ;
-		$this->$name = $name ;
+		$this->name = $name ;
 	}
 	
 	public function setId($id)
