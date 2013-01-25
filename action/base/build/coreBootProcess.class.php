@@ -154,15 +154,14 @@ abstract class coreBootProcess
 						$player->$method($playerAttributeValue);
 						if($playerAttribute=='account_id')
 						{
-							$account_ids[] = $playerAttributeValue ;
-							$player_account_id = $playerAttributeValue ;
-							
+							$account_ids[$dump_player->player_slot] = $playerAttributeValue ;
+														
 						} 
 						
 					}
 					
 					// add player to match players 
-					$players[$player_account_id] = $player ;
+					$players[$dump_player->player_slot] = $player ;
 										
 					
 				}
@@ -170,6 +169,7 @@ abstract class coreBootProcess
 				// make string with accounts
 				$steamids = '';
 				foreach($account_ids as $account_id)
+					if( $playerAttributeValue!='4294967295' || $playerAttributeValue!= -1)
 						$steamids .= binaryConvert::make64bit($account_id).',';
 				
 				$steamids = substr($steamids, 0,strlen($steamids)-1 );
@@ -199,7 +199,11 @@ abstract class coreBootProcess
 							
 							if($accountAttribute=='steamid') 
 							{
-								$players[binaryConvert::make32bit($accountAttributeValue)]->setAccount($account) ;
+								foreach($account_ids as $slot_id=>$account_id)
+								{
+									if($account_id == $accountAttribute)
+										$players[$slot_id]->setAccount($account) ;
+								}
 								
 							}
 								

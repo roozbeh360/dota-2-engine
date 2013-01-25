@@ -14,16 +14,10 @@ if($match){
 $players =  $match->getPlayers();
 foreach($players as $player)
 {
-	echo $player->getAccount_id() ;
+	echo $player->getHero()->getName() .'<br />';
 }
 
 echo '<br />' ;
-
-
-	print_r($players[0]->getHero()->getName());
-
-echo '<br />' ;
-
 }
 else echo 'not found' ; 
 echo '</br>';
