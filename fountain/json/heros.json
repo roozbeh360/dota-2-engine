@@ -396,9 +396,13 @@
 			{
 				"name": "npc_dota_hero_tusk",
 				"id": 100
+			},
+			{
+				"name": "npc_dota_hero_skywrath_mage",
+				"id": 101
 			}
 		]
 		,
-		"count": 99
+		"count": 100
 	}
 }
