@@ -8,7 +8,7 @@ class config{
 	static public  $api_match_history = "GetMatchHistory";
 	static public  $api_match_details = "GetMatchDetails";
 	static public  $api_version = array('v001','v0002');
-	static public  $api_key = "B6F432DA5034276589FA896956AD8234";
+	static public  $api_key = "B6F432DA5___key___896956AD8234";
 }
    
 
