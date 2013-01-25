@@ -23,7 +23,7 @@ abstract class BaseDoProcess extends coreBootProcess
 		$jsonResponse = new curLoad($query);
 		
 		// return false if no match found or there was error on request
-		if(!$jsonResponse->getResponse()) return false ;
+		if(!$jsonResponse->hasResponse()) return false ;
 	
 		// decode json response to json object
 		$json_object = JsonHandler::decode($jsonResponse->getResponse()) ;	

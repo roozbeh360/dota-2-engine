@@ -33,10 +33,14 @@ class curLoad{
 	
 	public function getResponse()
 	{
-		if(strlen($this->raw_response) < 20) return false ;
-		else return	$this->raw_response ;
+		 return	$this->raw_response ;
 	}
 	
+	public function hasResponse()
+	{
+		if(strlen($this->raw_response) < 100) return false ;
+		else return	true ;
+	}
 	
 	public function getError()
 	{

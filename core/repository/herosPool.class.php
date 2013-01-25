@@ -18,10 +18,12 @@ require_once  'implements/heros.interface.php'  ;
 		
 		foreach($heros_result_heros as $key=>$hero)
 		{
-			$array[++$key] = $hero->name ;
+			$array[$hero->id] = $hero->name ;
+			
 		}	
-		
+
 		$this->setHeros_pool($array) ;
+		
 		
 	}
 	

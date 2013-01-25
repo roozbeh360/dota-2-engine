@@ -26,7 +26,7 @@ abstract class coreBootProcess
 		
 		$players = array() ;
 		
-		if($jsonResponse->getResponse() && strlen($jsonResponse->getResponse())>100 ) 
+		if($jsonResponse->hasResponse() ) 
 				{
 					// decode json response to json object
 					$json_object = JsonHandler::decode($jsonResponse->getResponse()) ;	
@@ -139,33 +139,33 @@ abstract class coreBootProcess
 				$players = array();
 				$account_ids = array();
 				
-				$object_payers = $matchMix->players ;
+				$object_players = $matchMix->players ;
 				
 				
-				foreach($object_payers as $dump_player)
+				foreach($object_players as $dump_player)
 				{
-					$palyer = new player() ;
+					$player = new player() ;
 					$player_account_id = '' ;
 					
 					foreach($dump_player as $playerAttribute=>$playerAttributeValue)
 					{
 						
 						$method = 'set'.ucfirst($playerAttribute) ;
-						$palyer->$method($playerAttributeValue);
+						$player->$method($playerAttributeValue);
 						if($playerAttribute=='account_id')
 						{
 							$account_ids[] = $playerAttributeValue ;
 							$player_account_id = $playerAttributeValue ;
+							
 						} 
 						
 					}
 					
 					// add player to match players 
-					$players[$player_account_id] = $palyer ;
+					$players[$player_account_id] = $player ;
 										
 					
 				}
-				
 				
 				// make string with accounts
 				$steamids = '';
@@ -177,11 +177,11 @@ abstract class coreBootProcess
 				
 				// request steam account and attach to players
 				$query = config::$api_url.config::$api_steamuser_name.'/'.config::$api_player_summaries.'/'.config::$api_version[1].'/?'.'key='.config::$api_key.'&steamids='.$steamids;
-		
+
 				// $query is api format request query
 				$jsonResponse = new curLoad($query);
-					
-				if($jsonResponse->getResponse() && strlen($jsonResponse->getResponse())>100 ) 
+
+				if($jsonResponse->hasResponse() ) 
 				{
 					// decode json response to json object
 					$json_object = JsonHandler::decode($jsonResponse->getResponse()) ;	
@@ -200,6 +200,7 @@ abstract class coreBootProcess
 							if($accountAttribute=='steamid') 
 							{
 								$players[binaryConvert::make32bit($accountAttributeValue)]->setAccount($account) ;
+								
 							}
 								
 									
