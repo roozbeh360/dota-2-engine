@@ -193,7 +193,7 @@ abstract class coreBootProcess
 						$account = new account();
 						foreach($dump_player as $accountAttribute=>$accountAttributeValue)
 						{
-							//print_r($accountAttribute.'=>'.$accountAttributeValue); die();
+							
 							$method = 'set'.ucfirst($accountAttribute) ;
 							$account->$method($accountAttributeValue);
 							
@@ -201,7 +201,7 @@ abstract class coreBootProcess
 							{
 								foreach($account_ids as $slot_id=>$account_id)
 								{
-									if($account_id == $accountAttribute)
+									if(binaryConvert::make32bit($accountAttributeValue)==$account_id )
 										$players[$slot_id]->setAccount($account) ;
 								}
 								

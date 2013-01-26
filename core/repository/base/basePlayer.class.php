@@ -18,6 +18,7 @@ abstract class basePlayer{
 	public $item_3 ;
 	public $item_4 ;
 	public $item_5 ;
+	public $items ;
 	public $kills ;
 	public $deaths ;
 	public $assists ;
@@ -270,6 +271,23 @@ abstract class basePlayer{
 	public function getAccount()
 	{
 		return $this->account ;
+	}
+	
+	public function setItems($items)
+	{
+		$this->items = $items ;
+	}
+	
+	public function getItems()
+	{
+		if($this->items)
+		{
+			return $this->items ;
+		}
+		
+		else{
+			return array($this->item_0,$this->item_1,$this->item_2,$this->item_3,$this->item_4,$this->item_5) ;
+		} 
 	}
 }
         
