@@ -230,4 +230,16 @@ abstract class baseMatchDetails{
 	{
 		return $this->start_time ;
 	}
+	
+	public function getMatch_replay()
+	{
+		/**
+		 * return match replay url for download in string format 
+		 * attention this will not work unless players grant the match
+		 */
+		$cluster = $this->cluster ;
+		$match_id =$this->match_id ;
+		$replay_salt = $this->replay_salt ;
+		return "http://replay$cluster.valve.net/570/$match_id"."_"."$replay_salt.dem.bz2" ;
+	}
 }

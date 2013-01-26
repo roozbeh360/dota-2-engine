@@ -35,8 +35,21 @@ abstract class baseHero {
 	
 	public function getName()
 	{
-		return $this->name ;
+		$real_name = str_replace('npc_dota_hero_', '', $this->name) ;
+		$real_name = str_replace('_', ' ', $real_name) ;
+		return $real_name ;
 	}
 	
+	public function getFull_image()
+	{
+		$real_name = str_replace('npc_dota_hero_', '', $this->name) ;
+		return "http://media.steampowered.com/apps/dota2/images/heroes/".$real_name."_full.png" ;
+	}
+	
+	public function getThumbnail_image()
+	{
+		$real_name = str_replace('npc_dota_hero_', '', $this->name) ;
+		return "http://media.steampowered.com/apps/dota2/images/heroes/".$real_name."_sb.png" ;
+	}
 	
 }
