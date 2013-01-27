@@ -191,7 +191,7 @@ class itemHelper
          "173" => "recipe_diffusal_blade",
          "195" => "recipe_diffusal_blade_2",
          "174" => "diffusal_blade",
-         "196" => "diffusal_blade_2",
+         "196" => "recipe_diffusal_blade_2",
          "175" => "recipe_ethereal_blade",
          "176" => "ethereal_blade",
          "177" => "recipe_soul_ring",
