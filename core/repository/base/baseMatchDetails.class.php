@@ -71,7 +71,7 @@ abstract class baseMatchDetails{
 	
 	public function getDuration()
 	{
-		return $this->duration = $duration ;
+		return $this->duration ;
 	}
 	
 	public function setStarttime($starttime)
@@ -241,5 +241,38 @@ abstract class baseMatchDetails{
 		$match_id =$this->match_id ;
 		$replay_salt = $this->replay_salt ;
 		return "http://replay$cluster.valve.net/570/$match_id"."_"."$replay_salt.dem.bz2" ;
+	}
+	
+	public function getGame_mode_name()
+	{
+		switch ($this->game_mode) {
+			case '1':
+				return 'All Pick' ;
+				break;
+			case '2':
+				return 'Single Draft' ;
+				break;
+			case '3':
+				return "Captain's Mode" ;
+				break;
+			case '4':
+				return 'Random Draft' ;
+				break;
+			case '5':
+				return 'Least Played' ;
+				break;	
+			case '6':
+				return 'All Random' ;
+				break;	
+			case '7':
+				return 'Reverse Draft' ;
+				break;
+			case '8':
+				return 'Mid Only' ;
+				break;					
+			default:
+				return 'None' ;
+				break;
+		}
 	}
 }

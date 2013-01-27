@@ -8,6 +8,9 @@ require_once 'engine.php' ; // as default it must always included
 require_once 'helpers/template/item.helper.php' ; 
 require_once 'helpers/template/position.helper.php' ; 
 
+// using analyze helper
+require_once 'helpers/analyze/analyze.helper.php' ; 
+
 
 $doProcess = new doProcess();
 $match = $doProcess->fetchMatchDetailsById(109003686);
@@ -59,6 +62,18 @@ foreach($players as $player)
 }
 
 echo '<br />' ;
+echo 'Best Warrior : ';
+$bestPlayer = $analyzer->analyzeBestWarrior($players) ;
+echo $slotPosition->renderFullPosition($bestPlayer->getPlayer_slot(),$bestPlayer->getHero()->getThumbnail_image(),'heroImage') ;
+
+echo '<br />';
+echo 'Top Ten Warriors : ' ;
+
+$top10players = $analyzer->analyzeTopTenWarriors($players) ;
+
+foreach ($top10players as $player) {
+	echo $slotPosition->renderFullPosition($player->getPlayer_slot(),$player->getHero()->getThumbnail_image(),'heroImage') ;
+}
 }
 else echo 'not found' ; 
 echo '</br>';

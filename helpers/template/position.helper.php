@@ -19,7 +19,7 @@ class slotPosition
          "132" => "#7d5e41",
          );
  
- public  function renderFullPosition($slot,$heroImage,$cssClass)
+ public  function renderFullPosition($slot,$heroImage,$cssClass='positionImageClass')
  {
  	return '<img src="'.$heroImage.'" style="border: 4px solid '.$this->slot_list[$slot].'" class="'.$cssClass.'" /> ' ;
  }
