@@ -1,14 +1,15 @@
 dota-2-engine
 =============
 
-about dota 2 api framework
+about dota 2 api framework . see demo below and please use latest browsers .
+demo : http://dota.remake.ir/
 ======
 
 this framework based on dota 2 api (http://www.dota2wiki.com/wiki/API) and php language .
 
 this framework built on my extra time so it means it may have a few bug and errors 
 but i am working on it still in my free times to stabilized it .
-please review license please .
+please review license .
 
 install
 ======
