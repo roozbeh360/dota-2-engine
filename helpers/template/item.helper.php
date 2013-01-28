@@ -215,7 +215,8 @@ class itemHelper
          "211" => "recipe_ring_of_aquila",
          "212" => "ring_of_aquila",
          "213" => "recipe_tranquil_boots",
-         "214" => "tranquil_boots");
+         "214" => "tranquil_boots",
+         "215" => "shadow_amulet");
  
  public  function renderItem_name($iteam_id)
  {

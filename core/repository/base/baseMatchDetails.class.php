@@ -29,6 +29,12 @@ abstract class baseMatchDetails{
 	public $negative_votes ;
 	public $game_mode ;
 	public $start_time ;
+	public $radiant_name ;
+	public $dire_name ;
+	public $radiant_logo;
+	public $dire_logo;
+	public $radiant_team_complete ;
+	public $dire_team_complete ;
 	
 	public function setPlayers($array)
 	{
@@ -243,6 +249,66 @@ abstract class baseMatchDetails{
 		return "http://replay$cluster.valve.net/570/$match_id"."_"."$replay_salt.dem.bz2" ;
 	}
 	
+	public function setRadiant_name($radiant_name)
+	{
+		$this->radiant_name = $radiant_name ;
+	}
+	
+	public function getRadiant_name()
+	{
+		return $this->radiant_name ;
+	}
+	
+	public function setDire_name($dire_name)
+	{
+		$this->dire_name = $dire_name ;
+	}
+	
+	public function getDire_name()
+	{
+		return $this->dire_name ;
+	}
+	
+	public function setRadiant_logo($radiant_logo)
+	{
+		$this->radiant_logo = $radiant_logo ;
+	}
+	
+	public function getRadiant_logo()
+	{
+		return $this->radiant_logo ;
+	}
+	
+	public function setDire_logo($dire_logo)
+	{
+		$this->dire_logo = $dire_logo ;
+	}
+	
+	public function getDire_logo()
+	{
+		return $this->dire_logo ;
+	}
+	
+	public function  setRadiant_team_complete($radiant_team_complete)
+	{
+		$this->radiant_team_complete = $radiant_team_complete ;
+	}
+	
+	public function  getRadiant_team_complete()
+	{
+		return $this->radiant_team_complete ;
+	}
+	
+	public function  setDire_team_complete($dire_team_complete)
+	{
+		$this->dire_team_complete = $dire_team_complete ;
+	}
+	
+	public function  getDire_team_complete()
+	{
+		return $this->dire_team_complete ;
+	}
+	
 	public function getGame_mode_name()
 	{
 		switch ($this->game_mode) {
@@ -275,4 +341,5 @@ abstract class baseMatchDetails{
 				break;
 		}
 	}
+	
 }
