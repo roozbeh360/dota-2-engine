@@ -8,7 +8,15 @@ class analyzer
 		
 		foreach($players as $player)
 		{
-			$score = (((int)$player->getKills()/(int)$player->getDeaths())+((int)$player->getAssists()/(4+(int)$player->getDeaths())))*(((int)$player->getLevel()/100)+1) ;
+			$kills = (int)$player->getKills() ;
+			$deaths = (int)$player->getDeaths() ;
+			$assists = (int)$player->getAssists() ;
+			$level = (int)$player->getLevel() ;
+			if($deaths == 0)
+				$score = (($kills/1)+($assists/(4)))*(($level/100)+1) ;
+			else 
+			$score = (($kills/$deaths)+($assists/(4+$deaths)))*(($level/100)+1) ;
+			
 			$players_scors[$player->getPlayer_slot()] = $score ;
 		}
 		
@@ -40,7 +48,15 @@ class analyzer
 		
 		foreach($players as $player)
 		{
-			$score = (((int)$player->getKills()/(int)$player->getDeaths())+((int)$player->getAssists()/(4+(int)$player->getDeaths())))*(((int)$player->getLevel()/100)+1) ;
+			$kills = (int)$player->getKills() ;
+			$deaths = (int)$player->getDeaths() ;
+			$assists = (int)$player->getAssists() ;
+			$level = (int)$player->getLevel() ;
+			if($deaths == 0)
+				$score = (($kills/1)+($assists/(4)))*(($level/100)+1) ;
+			else 
+			$score = (($kills/$deaths)+($assists/(4+$deaths)))*(($level/100)+1) ;
+			
 			$players_scors[$player->getPlayer_slot()] = $score ;
 		}
 		
