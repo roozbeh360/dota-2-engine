@@ -19,10 +19,27 @@ require_once dirname(__FILE__).'/../../../core/repository/account.class.php';
 
 abstract class coreBootProcess
 {
-	
-	public static function buildPlayersSummaries($query) 
+	public static function buildMatchDetails($query,$fast=false)
 	{
+		// $query is api format request query
 		$jsonResponse = new curLoad($query);
+		
+		// return false if no match found or there was error on request
+		if(!$jsonResponse->hasResponse()) return false ;
+	
+		// decode json response to json object
+		$json_object = JsonHandler::decode($jsonResponse->getResponse()) ;	
+		
+		// build matchDetails object on json object
+		$match_result = new matchDetails() ;
+		
+		$match_result = self::buildMatch($json_object->result) ;
+		
+		return $match_result ;
+	}
+	public static function buildPlayersSummaries($query,$fast=false) 
+	{
+		$jsonResponse = new curLoad($query,$fast);
 		
 		$players = array() ;
 		
@@ -41,19 +58,16 @@ abstract class coreBootProcess
 
 							$method = 'set'.ucfirst($accountAttribute) ;
 							$account->$method($accountAttributeValue);
-							
-							if($accountAttribute=='steamid') 
-							{
-								$players[binaryConvert::make32bit($accountAttributeValue)]->setAccount($account) ;
-							}
-								
 									
 						}
+						$players[] = $account ;
 											
 					}
-					
+					return $players ;
 				}
-		return $players ;
+		else return false ;
+		
+		
 	}
 	
 	public static function buildMatchHistoryQuery($player_name=null,$account_id=null,$hero_id=null,$skill=null,$date_min=null,$date_max=null,$league_id=null,$start_at_match_id=null,$matches_requested=null)
@@ -91,7 +105,7 @@ abstract class coreBootProcess
 	{
 		
 		// $query is api format request query
-		$jsonResponse = new curLoad($query);
+		$jsonResponse = new curLoad($query,true);
 		
 		// return false if no match found or there was error on request
 		if(!$jsonResponse->getResponse()) return false ;
@@ -111,9 +125,11 @@ abstract class coreBootProcess
 			if($objectname == 'matches') 
 			{
 				$matcheObjects = $json_object->result->matches;
+				
+			
 				foreach($matcheObjects as $matchObject)
 				{
-					$matches[] = self::buildMatch($matchObject) ;
+					$matches[] = self::buildMatch($matchObject,true) ;
 				}
 			}
 			else
@@ -128,13 +144,16 @@ abstract class coreBootProcess
 		return $matchHistory ;
 	}
 	
-	public static function buildMatch($matchMix)
+	public static function buildMatch($matchMix,$short = false)
 	{
 		$match_result = new matchDetails() ;
 		
 		foreach($matchMix as $objectname=>$object)
 		{
+			 // short format for match history
 			if($objectname == 'players') {
+				
+				if($short) break ;
 				
 				$players = array();
 				$account_ids = array();
@@ -178,52 +197,30 @@ abstract class coreBootProcess
 				// request steam account and attach to players
 				$query = config::$api_url.config::$api_steamuser_name.'/'.config::$api_player_summaries.'/'.config::$api_version[1].'/?'.'key='.config::$api_key.'&steamids='.$steamids;
 
-				// $query is api format request query
-				$jsonResponse = new curLoad($query);
+				// $query is api format request query and true arg for fast response
+				$playersSummaries = self::buildPlayersSummaries($query,true) ;
 
-				if($jsonResponse->hasResponse() ) 
+				if($playersSummaries ) 
 				{
-					// decode json response to json object
-					$json_object = JsonHandler::decode($jsonResponse->getResponse()) ;	
 					
-					$accounts = $json_object->response->players ;
-					//print_r($players); die();
-					foreach($accounts as $dump_player)
+					foreach($playersSummaries as $playersSummarie)
 					{
-						$account = new account();
-						foreach($dump_player as $accountAttribute=>$accountAttributeValue)
+						$slot=array_search(binaryConvert::make32bit($playersSummarie->getSteamid()), $account_ids) ;
+						if($slot || $account_ids[$slot] == binaryConvert::make32bit($playersSummarie->getSteamid()) )
 						{
-							
-							$method = 'set'.ucfirst($accountAttribute) ;
-							$account->$method($accountAttributeValue);
-							
-							if($accountAttribute=='steamid') 
-							{
-								foreach($account_ids as $slot_id=>$account_id)
-								{
-									if(binaryConvert::make32bit($accountAttributeValue)==$account_id )
-										$players[$slot_id]->setAccount($account) ;
-								}
-								
-							}
-								
-									
+							$players[$slot]->setAccount($playersSummarie) ;
 						}
-											
+						
 					}
-					
+				
 				}
-				
-				
-				
-				
 				
 				$match_result->setPlayers($players) ;
 				
 			}
 			else {
 				$method = 'set'.ucfirst($objectname) ;
-				$match_result->$method($object) ;
+				$match_result->$method($object) ;	
 			}
 			
 		}
