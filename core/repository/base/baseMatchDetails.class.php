@@ -324,13 +324,13 @@ abstract class baseMatchDetails{
 			case '4':
 				return 'Random Draft' ;
 				break;
-			case '5':
+			case '6':
 				return 'Least Played' ;
 				break;	
-			case '7':
+			case '5':
 				return 'All Random' ;
 				break;	
-			case '6':
+			case '7':
 				return 'Reverse Draft' ;
 				break;
 			case '8':
