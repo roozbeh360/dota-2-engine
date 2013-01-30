@@ -91,9 +91,9 @@ abstract class coreBootProcess
 		if($skill) $query .= '&skill='.$skill;
 		if($date_min) $query .= '&date_min='.$date_min;
 		if($date_max) $query .= '&date_max='.$date_max;
-		if($league_id) $query .= '&=league_id'.$league_id;
-		if($start_at_match_id) $query .= '&=start_at_match_id'.$start_at_match_id;
-		if($matches_requested) $query .= '&=matches_requested'.$matches_requested;
+		if($league_id) $query .= '&league_id='.$league_id;
+		if($start_at_match_id) $query .= '&start_at_match_id='.$start_at_match_id;
+		if($matches_requested) $query .= '&matches_requested='.$matches_requested;
 
 
 		return $query ;
