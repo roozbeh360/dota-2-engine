@@ -3,7 +3,7 @@
  * category action.
  *
  * @package    dota 2 engine
- * @author     roozbeh baabakaan
+ * @author     roozbeh baabakaan baobao
  * @toDo       read https://github.com/roozbeh360/dota-2-engine
  */
  
@@ -15,6 +15,7 @@ require_once dirname(__FILE__).'/../../../core/repository/matchDetails.class.php
 require_once dirname(__FILE__).'/../../../core/repository/matchHistory.class.php';
 require_once dirname(__FILE__).'/../../../core/repository/player.class.php';
 require_once dirname(__FILE__).'/../../../core/repository/account.class.php';
+require_once dirname(__FILE__).'/../../../core/repository/league.class.php';
 
 
 abstract class coreBootProcess
@@ -226,6 +227,36 @@ abstract class coreBootProcess
 		}
 
 		return $match_result ;
+	}
+	
+	public static function buildLeagueListing($query,$fast=false)
+	{
+		$jsonResponse = new curLoad($query,$fast);
+		$leagues = array() ;
+		
+		if($jsonResponse->hasResponse() ) 
+			{
+				// decode json response to json object
+				$json_object = JsonHandler::decode($jsonResponse->getResponse()) ;	
+				
+				$leaguelist = $json_object->result->leagues ;
+				
+				foreach($leaguelist as $dump_league)
+				{
+					$league = new league();
+					foreach($dump_league as $leagueAttribute=>$leagueAttributeValue)
+					{
+
+						$method = 'set'.ucfirst($leagueAttribute) ;
+						$league->$method($leagueAttributeValue);
+								
+					}
+					$leagues[] = $league ;
+										
+				}
+				return $leagues ;
+			}
+		else return false ;		
 	}
 	
 }

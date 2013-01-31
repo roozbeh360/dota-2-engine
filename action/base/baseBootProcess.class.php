@@ -3,7 +3,7 @@
  * category action.
  *
  * @package    dota 2 engine
- * @author     roozbeh baabakaan
+ * @author     roozbeh baabakaan baobao
  * @toDo       read https://github.com/roozbeh360/dota-2-engine
  */
  
@@ -81,6 +81,14 @@ abstract class BaseDoProcess extends coreBootProcess
 		return self::buildMatchHistory($query) ;
 	} 
 	
+	public function fetchLeagueListing()
+	{		
+		// request league listing using api
+		$query = config::$api_url.config::$api_dota_name.'/'.config::$api_league_listing.'/'.config::$api_version[0].'/?'.'key='.config::$api_key;
+		
+		return self::buildLeagueListing($query) ;
+		
+	}
 	
 	
 }
