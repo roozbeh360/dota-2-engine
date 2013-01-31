@@ -7,6 +7,7 @@ class config{
 	static public $api_player_summaries = 'GetPlayerSummaries';
 	static public  $api_match_history = "GetMatchHistory";
 	static public  $api_match_details = "GetMatchDetails";
+	static public  $api_league_listing = "GetLeagueListing";
 	static public  $api_version = array('v001','v0002');
 	static public  $api_key = "<key>";
 }
