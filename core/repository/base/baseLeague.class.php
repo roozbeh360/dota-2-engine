@@ -3,7 +3,7 @@
  * category repository base.
  *
  * @package    dota 2 engine
- * @author     roozbeh baabakaan baobao
+ * @author     baobao
  * @toDo       read https://github.com/roozbeh360/dota-2-engine
  */
      

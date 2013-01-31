@@ -3,7 +3,7 @@
  * category action.
  *
  * @package    dota 2 engine
- * @author     roozbeh baabakaan baobao
+ * @author     roozbeh baabakaan , baobao
  * @toDo       read https://github.com/roozbeh360/dota-2-engine
  */
  
@@ -20,10 +20,10 @@ require_once dirname(__FILE__).'/../../../core/repository/league.class.php';
 
 abstract class coreBootProcess
 {
-	public static function buildMatchDetails($query,$fast=false)
+	public static function buildMatchDetails($query,$fast=true)
 	{
 		// $query is api format request query
-		$jsonResponse = new curLoad($query);
+		$jsonResponse = new curLoad($query,$fast);
 		
 		// return false if no match found or there was error on request
 		if(!$jsonResponse->hasResponse()) return false ;
@@ -38,7 +38,7 @@ abstract class coreBootProcess
 		
 		return $match_result ;
 	}
-	public static function buildPlayersSummaries($query,$fast=false) 
+	public static function buildPlayersSummaries($query,$fast=true) 
 	{
 		$jsonResponse = new curLoad($query,$fast);
 		
@@ -102,11 +102,11 @@ abstract class coreBootProcess
 	} // buildMatchHistoryQuery
 	
 	
-	public static function buildMatchHistory($query)
+	public static function buildMatchHistory($query,$fast=true)
 	{
 		
 		// $query is api format request query
-		$jsonResponse = new curLoad($query,true);
+		$jsonResponse = new curLoad($query,$fast);
 		
 		// return false if no match found or there was error on request
 		if(!$jsonResponse->getResponse()) return false ;
@@ -229,7 +229,7 @@ abstract class coreBootProcess
 		return $match_result ;
 	}
 	
-	public static function buildLeagueListing($query,$fast=false)
+	public static function buildLeagueListing($query,$fast=true)
 	{
 		$jsonResponse = new curLoad($query,$fast);
 		$leagues = array() ;
