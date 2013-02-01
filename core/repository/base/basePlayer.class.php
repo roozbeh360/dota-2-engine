@@ -34,6 +34,7 @@ abstract class basePlayer{
 	public $hero_healing ;
 	public $level ;
 	public $account ;
+	public $ability_upgrades ;
 	
 	public function setAccount_id($account_id)
 	{
@@ -288,6 +289,16 @@ abstract class basePlayer{
 		else{
 			return array($this->item_0,$this->item_1,$this->item_2,$this->item_3,$this->item_4,$this->item_5) ;
 		} 
+	}
+	
+	public function setAbility_upgrades($ability_upgrades)
+	{
+		$this->ability_upgrades = $ability_upgrades ;
+	}
+	
+	public function getAbility_upgrades()
+	{
+		return $this->ability_upgrades ;
 	}
 }
         
