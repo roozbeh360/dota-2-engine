@@ -35,6 +35,7 @@ abstract class baseMatchDetails{
 	public $dire_logo;
 	public $radiant_team_complete ;
 	public $dire_team_complete ;
+	public $match_seq_num ;
 	
 	public function setPlayers($array)
 	{
@@ -307,6 +308,16 @@ abstract class baseMatchDetails{
 	public function  getDire_team_complete()
 	{
 		return $this->dire_team_complete ;
+	}
+	
+	public function setMatch_seq_num($match_seq_num)
+	{
+		$this->match_seq_num = $match_seq_num ;
+	}
+	
+	public function getMatch_seq_num()
+	{
+		return $this->match_seq_num ;
 	}
 	
 	public function getGame_mode_name()
