@@ -36,7 +36,7 @@ at last edit action/config/config.php
     static public  $api_key = "B6F432D___your key____956AD8234";
 clear 	B6F432D___your key____956AD8234 and write your api key .
 
-thers is some thing l should tell you , still api is down for some reason but test api is on and we can build our applications.
+Do not forget .
     static public $api_url = "http://api.steampowered.com/" ;
     static public $api_dota_name ="IDOTA2Match_205790";
 above lines is api url if you change http to https it will using https portocol to load data and it have more benefits than http like get more data from steam profiles .
@@ -60,8 +60,8 @@ $match = $doProcess->fetchMatchDetailsById(1455138);
 
 
 
-for full documents see documention/index.html
-
+for full documents see documention/index.html .
+or see core/repository/base/baseMatchDetails.class.php for get* functions you can use .
 
 FAQ
 =============
@@ -72,4 +72,8 @@ why cc copyright ? it still need more test and more developers to come so i need
 
 how about the framework speed ? it's just fine but dota 2 api is not working well 
 
+what about dota.remake.ir ? it's just demo file for speed test and functionality review .
+
 can i ask questions ? yes contact me on baabakaan@remake.ir .
+
+
