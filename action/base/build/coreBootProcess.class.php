@@ -102,14 +102,14 @@ abstract class coreBootProcess
 	} // buildMatchHistoryQuery
 	
 	
-	public static function buildMatchHistory($query,$fast=true)
+	public static function buildMatchHistory($query,$fast=true,$short=true)
 	{
 		
 		// $query is api format request query
 		$jsonResponse = new curLoad($query,$fast);
 		
 		// return false if no match found or there was error on request
-		if(!$jsonResponse->getResponse()) return false ;
+		if(!$jsonResponse->hasResponse()) return false ;
 	
 		// decode json response to json object
 		$json_object = JsonHandler::decode($jsonResponse->getResponse()) ;	
@@ -130,7 +130,7 @@ abstract class coreBootProcess
 			
 				foreach($matcheObjects as $matchObject)
 				{
-					$matches[] = self::buildMatch($matchObject,true) ;
+					$matches[] = self::buildMatch($matchObject,$short) ;
 				}
 			}
 			else
@@ -151,10 +151,11 @@ abstract class coreBootProcess
 		
 		foreach($matchMix as $objectname=>$object)
 		{
-			 // short format for match history
+			 
 			if($objectname == 'players') {
 				
-				if($short) break ;
+				// short format for match history
+				if($short) continue ;
 				
 				$players = array();
 				$account_ids = array();
@@ -228,19 +229,19 @@ abstract class coreBootProcess
 
 		return $match_result ;
 	}
-	
+
 	public static function buildLeagueListing($query,$fast=true)
 	{
 		$jsonResponse = new curLoad($query,$fast);
 		$leagues = array() ;
-		
+
 		if($jsonResponse->hasResponse() ) 
 			{
 				// decode json response to json object
 				$json_object = JsonHandler::decode($jsonResponse->getResponse()) ;	
-				
+
 				$leaguelist = $json_object->result->leagues ;
-				
+
 				foreach($leaguelist as $dump_league)
 				{
 					$league = new league();
@@ -249,10 +250,10 @@ abstract class coreBootProcess
 
 						$method = 'set'.ucfirst($leagueAttribute) ;
 						$league->$method($leagueAttributeValue);
-								
+
 					}
 					$leagues[] = $league ;
-										
+
 				}
 				return $leagues ;
 			}
@@ -260,3 +261,4 @@ abstract class coreBootProcess
 	}
 	
 }
+

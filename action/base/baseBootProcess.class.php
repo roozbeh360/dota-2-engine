@@ -81,14 +81,18 @@ abstract class BaseDoProcess extends coreBootProcess
 		return self::buildMatchHistory($query) ;
 	} 
 	
+	public function fetchMatchHistoryBySequenceNum($matches_requested = null,$start_at_match_seq_num = null)
+	{
+		$query = config::$api_url.config::$api_dota_name.'/'.config::$api_match_history_by_sequenceNum.'/'.config::$api_version[0].'/?'.'key='.config::$api_key;
+		if($matches_requested) $query .= '&matches_requested='.$matches_requested;
+		if($start_at_match_seq_num) $query .= '&start_at_match_seq_num='.$start_at_match_seq_num;
+		return self::buildMatchHistory($query) ;
+	} 
+	
 	public function fetchLeagueListing()
 	{		
 		// request league listing using api
 		$query = config::$api_url.config::$api_dota_name.'/'.config::$api_league_listing.'/'.config::$api_version[0].'/?'.'key='.config::$api_key;
-		
 		return self::buildLeagueListing($query) ;
-		
 	}
-	
-	
 }
