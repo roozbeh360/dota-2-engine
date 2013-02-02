@@ -2,7 +2,7 @@
 
 require_once  'base/baseHerosPool.class.php'  ;   
 require_once  'hero.class.php' ;
-require_once  'implements/heros.interface.php'  ;
+
    
  class herosPool extends baseHerosPool 
 {

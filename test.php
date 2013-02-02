@@ -13,7 +13,7 @@ require_once 'helpers/analyze/analyze.helper.php' ;
 
 
 $doProcess = new doProcess();
-$match = $doProcess->fetchMatchDetailsById(109003686);
+$match = $doProcess->fetchMatchDetailsById(113987391);
 
 if($match){
 	if($match->getRadiant_win() ) 
@@ -37,6 +37,16 @@ foreach($players as $player)
 	echo  $player->getHero()->getName(),' ',
 	$slotPosition->renderFullPosition($player->getPlayer_slot(),$player->getHero()->getThumbnail_image(),'heroImage'),' '
 	      ;
+	$abilities = $player->getAbilities() ;
+	if($abilities)
+	{
+		echo '<span style="background: #dedede">abilities: ';
+		foreach($abilities as $ability)
+		{
+		echo '<img src="'.$ability->getImage().'" style="margin: 0px;margin-right: 4px" width="30" title="'.$ability->getName().'" />';
+		}
+	echo  '</span>';
+	}
 	      
 		  	
 			echo 'iteams :' ;
