@@ -1764,8 +1764,160 @@
             {
                 "name": "neutral_spell_immunity",
                 "id": "5303"
+            },
+            {
+            	"name": "nyx_assassin_impale",
+            	"id": "5462"
+            },
+            {
+            	"name": "nyx_assassin_mana_burn",
+            	"id": "5463"
+            },
+            {
+            	"name": "nyx_assassin_spiked_carapace",
+            	"id": "5464"
+            },
+            {
+            	"name": "nyx_assassin_vendetta",
+            	"id": "5465"
+            },
+            {
+            	"name": "slark_dark_pact",
+            	"id": "5494"
+            },
+            {
+            	"name": "slark_pounce",
+            	"id": "5495"
+            },
+            {
+            	"name": "slark_essence_shift",
+            	"id": "5496"
+            },
+            {
+            	"name": "slark_shadow_dance",
+            	"id": "5497"
+            },
+            {
+            	"name": "medusa_split_shot",
+            	"id": "5504"
+            },
+            {
+            	"name": "medusa_mystic_snake",
+            	"id": "5505"
+            },
+            {
+            	"name": "medusa_mana_shield",
+            	"id": "5506"
+            },
+            {
+            	"name": "medusa_stone_gaze",
+            	"id": "5507"
+            },
+            {
+            	"name": "troll_warlord_berserkers_rage",
+            	"id": "5508"
+            },
+            {
+            	"name": "troll_warlord_whirling_axes_ranged",
+            	"id": "5509"
+            },
+            {
+            	"name": "troll_warlord_whirling_axes_melee",
+            	"id": "5510"
+            },
+            {
+            	"name": "troll_warlord_fervor",
+            	"id": "5511"
+            },
+            {
+            	"name": "troll_warlord_battle_trance",
+            	"id": "5512"
+            },
+            {
+            	"name": "centaur_hoof_stomp",
+            	"id": "5514"
+            },
+            {
+            	"name": "centaur_double_edge",
+            	"id": "5515"
+            },
+            {
+            	"name": "centaur_return",
+            	"id": "5516"
+            },
+            {
+            	"name": "centaur_stampede",
+            	"id": "5517"
+            },
+            {
+            	"name": "magnataur_shockwave",
+            	"id": "5518"
+            },
+            {
+            	"name": "magnataur_empower",
+            	"id": "5519"
+            },
+            {
+            	"name": "magnataur_skewer",
+            	"id": "5520"
+            },
+            {
+            	"name": "magnataur_reverse_polarity",
+            	"id": "5521"
+            },
+            {
+            	"name": "shredder_whirling_death",
+            	"id": "5524"
+            },
+            {
+            	"name": "shredder_timber_chain",
+            	"id": "5525"
+            },
+            {
+            	"name": "shredder_reactive_armor",
+            	"id": "5526"
+            },
+            {
+            	"name": "shredder_chakram",
+            	"id": "5527"
+            },
+            {
+            	"name": "shredder_return_chakram",
+            	"id": "5528"
+            },
+            {
+            	"name": "keeper_of_the_light_illuminate",
+            	"id": "5471"
+            },
+            {
+            	"name": "keeper_of_the_light_mana_leak",
+            	"id": "5472"
+            },
+            {
+            	"name": "keeper_of_the_light_chakra_magic",
+            	"id": "5473"
+            },
+            {
+            	"name": "keeper_of_the_light_spirit_form",
+            	"id": "5474"
+            },
+            {
+            	"name": "keeper_of_the_light_recall",
+            	"id": "5475"
+            },
+            {
+            	"name": "keeper_of_the_light_blinding_light",
+            	"id": "5476"
+            },
+            {
+            	"name": "keeper_of_the_light_illuminate_end",
+            	"id": "5477"
+            },
+            {
+            	"name": "keeper_of_the_light_spirit_form_illuminate",
+            	"id": "5479"
             }
         ],
-        "count": 441
+        "count": 479
     }
 }

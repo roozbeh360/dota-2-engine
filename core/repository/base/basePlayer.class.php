@@ -35,6 +35,7 @@ abstract class basePlayer{
 	public $level ;
 	public $account ;
 	public $ability_upgrades ;
+	public $additional_units ;
 	
 	public function setAccount_id($account_id)
 	{
@@ -300,5 +301,16 @@ abstract class basePlayer{
 	{
 		return $this->ability_upgrades ;
 	}
+	
+	public function setAdditional_units($additional_units)
+	{
+		$this->additional_units = $additional_units ;
+	}
+	
+	public function getAdditional_units()
+	{
+		return $this->additional_units ;
+	}
+	
 }
         
