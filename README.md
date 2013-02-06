@@ -1,7 +1,7 @@
 dota-2-engine
 =============
 
-VERSION 1.4.8 beta
+VERSION 1.4.9 beta
 =============
 
 about dota 2 api framework . see demo below and please use latest browsers .
@@ -17,10 +17,10 @@ please review license .
 install
 ======
 clone project , from command/bash line run :
-git clone https://github.com/roozbeh360/dota-2-engine.git dota2engine
+git clone https://github.com/roozbeh360/dota-2-engine.git dota2engine  
 
-first of all you should enable these extentions in php.ini or on your host .
-find these lines and remove ; from beginning .
+first of all you should enable these extentions in php.ini or on your host . 
+find these lines and remove ; from beginning . 
 
 ;extension=php_curl.dll
 ;extension=php_gmp.dll
@@ -33,8 +33,8 @@ then you must get api key from valve :
 http://steamcommunity.com/dev/apikey
 
 at last edit action/config/config.php
-    static public  $api_key = "B6F432D___your key____956AD8234";
-clear 	B6F432D___your key____956AD8234 and write your api key .
+    static public  $api_key = "<key>";
+clear 	<key> and write your api key .
 
 Do not forget .
     static public $api_url = "http://api.steampowered.com/" ;
@@ -43,6 +43,10 @@ above lines is api url if you change http to https it will using https portocol 
 IDOTA2Match_205790 is test version of api so when the times come to use it then you should change it to IDOTA2Match_570 .
 
 ok that's it .
+
+you can add even make it faster by enabling php memCached extention .
+
+http://www.php.net/manual/en/memcached.installation.php
 
 usage
 ======
