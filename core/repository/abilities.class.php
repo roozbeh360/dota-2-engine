@@ -9,7 +9,29 @@ class abilities extends baseAbilities {
 	
 	function __construct()
 	{
-		$fountain_abilities = file_get_contents(dirname(__FILE__).'/../../fountain/json/abilities.json') ;
+		$fountain_abilities = '' ;
+		if(extension_loaded('memcached'))
+    	{
+
+    		$mc = new Memcached();
+			$mc->addServer( "localhost", 11211 );
+			
+			$heros_abilities = $mc->get( "heros_abilities" ) ;
+			if( $heros_abilities === false )
+			{
+				$fountain_abilities = file_get_contents(dirname(__FILE__).'/../../fountain/json/abilities.json') ;
+				$mc->set( "heros_abilities", $fountain_abilities, 60 * 60 * 24 * 2 /* 2 days */ );
+			}
+			else 
+			{
+				$fountain_abilities = $heros_abilities ;
+			}	
+    	}
+		else
+		{
+			$fountain_abilities = file_get_contents(dirname(__FILE__).'/../../fountain/json/abilities.json') ;
+		}
+		
 		
 		$abilities = JsonHandler::decode($fountain_abilities) ;
 		
