@@ -44,7 +44,7 @@ IDOTA2Match_205790 is test version of api so when the times come to use it then 
 
 ok that's it .
 
-you can add even make it faster by enabling php memCached extention .
+you can even make it faster by enabling php memCached extention .
 
 http://www.php.net/manual/en/memcached.installation.php
 
