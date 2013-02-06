@@ -33,8 +33,8 @@ then you must get api key from valve :
 http://steamcommunity.com/dev/apikey
 
 at last edit action/config/config.php
-    static public  $api_key = "<key>";
-clear 	<key> and write your api key .
+    static public  $api_key = "key";
+clear 	key and write your api key .
 
 Do not forget .
     static public $api_url = "http://api.steampowered.com/" ;
