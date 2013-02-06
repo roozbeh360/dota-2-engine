@@ -36,6 +36,7 @@ abstract class baseMatchDetails{
 	public $radiant_team_complete ;
 	public $dire_team_complete ;
 	public $match_seq_num ;
+	public $picks_bans ;
 	
 	public function setPlayers($array)
 	{
@@ -326,10 +327,10 @@ abstract class baseMatchDetails{
 			case '1':
 				return 'All Pick' ;
 				break;
-			case '2':
+			case '3':
 				return 'Single Draft' ;
 				break;
-			case '3':
+			case '2':
 				return "Captain's Mode" ;
 				break;
 			case '4':
@@ -351,6 +352,16 @@ abstract class baseMatchDetails{
 				return 'None' ;
 				break;
 		}
+	}
+	
+	public function setPicks_bans($picks_bans)
+	{
+		$this->picks_bans = $picks_bans ;
+	}
+	
+	public function getPicks_bans()
+	{
+		return $this->picks_bans ;
 	}
 	
 }
