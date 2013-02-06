@@ -78,6 +78,6 @@ how about the framework speed ? it's just fine but dota 2 api is not working wel
 
 what about dota.remake.ir ? it's just demo file for speed test and functionality review .
 
-can i ask questions ? yes contact me on baabakaan@remake.ir .
+can i ask questions or see release news ? https://www.facebook.com/Dota2Engine .
 
 
