@@ -1916,8 +1916,42 @@
             {
             	"name": "keeper_of_the_light_spirit_form_illuminate",
             	"id": "5479"
+            },
+            {
+            	"name": "rubick_telekinesis",
+            	"id": "5448"
+            },
+            {
+            	"name": "rubick_fade_bolt",
+            	"id": "5450"
+            },
+            {
+            	"name": "rubick_null_field",
+            	"id": "5451"
+            },
+            {
+            	"name": "rubick_spell_steal",
+            	"id": "5452"
+            },
+            {
+            	"name": "disruptor_thunder_strike",
+            	"id": "5458"
+            },
+            {
+            	"name": "disruptor_glimpse",
+            	"id": "5459"
+            },
+            {
+            	"name": "disruptor_kinetic_field",
+            	"id": "5460"
+            },
+            {
+            	"name": "disruptor_static_storm",
+            	"id": "5461"
             }
+            
+            
         ],
-        "count": 479
+        "count": 487
     }
 }

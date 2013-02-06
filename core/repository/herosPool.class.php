@@ -9,6 +9,8 @@ require_once  'hero.class.php' ;
 	function __construct()
 	{
 		$fountain_heros_pool = '' ;
+		$array = array();
+		
 		if(extension_loaded('memcached'))
     	{
 
@@ -19,31 +21,43 @@ require_once  'hero.class.php' ;
 			if( $heros_pool === false )
 			{
 				$fountain_heros_pool = file_get_contents(dirname(__FILE__).'/../../fountain/json/heros.json') ;
-				$mc->set( "heros_pool", $fountain_heros_pool, 60 * 60 * 24 * 2 /* 2 days */ );
+				
+				$heros = JsonHandler::decode($fountain_heros_pool) ;
+			
+				$heros_result_heros = $heros->result->heroes ;
+				
+				
+				foreach($heros_result_heros as $key=>$hero)
+				{
+					$array[$hero->id] = $hero->name ;
+					
+				}	
+		
+				$mc->set( "heros_pool", $array, 60 * 60 * 24 * 2 /* 2 days */ );
 			}
 			else 
 			{
-				$fountain_heros_pool = $heros_pool ;
+				$array = $heros_pool ;
 			}	
     	}
 		else
 		{
 			$fountain_heros_pool = file_get_contents(dirname(__FILE__).'/../../fountain/json/heros.json') ;
+			
+			$heros = JsonHandler::decode($fountain_heros_pool) ;
+		
+			$heros_result_heros = $heros->result->heroes ;
+			
+			foreach($heros_result_heros as $key=>$hero)
+			{
+				$array[$hero->id] = $hero->name ;
+				
+			}	
 		}
 		
 
 		
-		$heros = JsonHandler::decode($fountain_heros_pool) ;
 		
-	
-		$heros_result_heros = $heros->result->heroes ;
-		$array = array();
-		
-		foreach($heros_result_heros as $key=>$hero)
-		{
-			$array[$hero->id] = $hero->name ;
-			
-		}	
 
 		$this->setHeros_pool($array) ;
 		
