@@ -1948,6 +1948,58 @@
             {
             	"name": "disruptor_static_storm",
             	"id": "5461"
+            },
+            {
+            	"name": "naga_siren_mirror_image",
+            	"id": "5467"
+            },
+            {
+            	"name": "naga_siren_ensnare",
+            	"id": "5468"
+            },
+            {
+            	"name": "naga_siren_rip_tide",
+            	"id": "5469"
+            },
+            {
+            	"name": "naga_siren_song_of_the_siren",
+            	"id": "5470"
+            },
+            {
+            	"name": "visage_soul_assumption",
+            	"id": "5481"
+            },
+            {
+            	"name": "visage_gravekeepers_cloak",
+            	"id": "5482"
+            },
+            {
+            	"name": "visage_summon_familiars",
+            	"id": "5483"
+            },
+            {
+            	"name": "wisp_tether",
+            	"id": "5485"
+            },
+            {
+            	"name": "wisp_spirits",
+            	"id": "5486"
+            },
+            {
+            	"name": "wisp_overcharge",
+            	"id": "5487"
+            },
+            {
+            	"name": "wisp_relocate",
+            	"id": "5488"
+            },
+            {
+            	"name": "wisp_tether_break",
+            	"id": "5489"
+            },
+            {
+            	"name": "wisp_spirits_in",
+            	"id": "wisp_spirits_out"
             }
             
             
