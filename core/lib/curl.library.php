@@ -24,7 +24,8 @@ class curLoad{
 		    curl_setopt( $ch, CURLOPT_AUTOREFERER, true ); 
 		    curl_setopt( $ch, CURLOPT_SSL_VERIFYPEER, false ); 
 		    curl_setopt( $ch, CURLOPT_MAXREDIRS, 5 ); 
-		    curl_setopt( $ch, CURLOPT_CONNECTTIMEOUT, 10 ); 
+		    curl_setopt( $ch, CURLOPT_CONNECTTIMEOUT, 10 );
+			curl_setopt( $ch, CURLOPT_ENCODING , "gzip" );			
 		    $raw_response = curl_exec( $ch ); 
 		    $http_response_header = curl_getinfo( $ch ); 
 		    $this->curl_errno = curl_errno($ch); 
