@@ -37,6 +37,8 @@ abstract class baseMatchDetails{
 	public $dire_team_complete ;
 	public $match_seq_num ;
 	public $picks_bans ;
+	public $radiant_team_id;
+	public $dire_team_id ;
 	
 	public function setPlayers($array)
 	{
@@ -362,6 +364,26 @@ abstract class baseMatchDetails{
 	public function getPicks_bans()
 	{
 		return $this->picks_bans ;
+	}
+	
+	public function setRadiant_team_id($radiant_team_id)
+	{
+		$this->radiant_team_id = $radiant_team_id ;
+	}
+	
+	public function getRadiant_team_id()
+	{
+		return $this->radiant_team_id ;
+	}
+	
+	public function setDire_team_id($dire_team_id)
+	{
+		$this->dire_team_id = $dire_team_id ;
+	}
+	
+	public function getDire_team_id()
+	{
+		return $this->dire_team_id ;
 	}
 	
 }
