@@ -1999,8 +1999,26 @@
             },
             {
             	"name": "wisp_spirits_in",
-            	"id": "wisp_spirits_out"
+            	"id": "5490"
             }
+			,
+            {
+            	"name": "bristleback_viscous_nasal_goo",
+            	"id": "5548"
+            },
+            {
+            	"name": "bristleback_quill_spray",
+            	"id": "5549"
+            },
+            {
+            	"name": "bristleback_bristleback",
+            	"id": "5550"
+            },
+            {
+            	"name": "bristleback_warpath",
+            	"id": "5551"
+            }
+			
             
             
         ],

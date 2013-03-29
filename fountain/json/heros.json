@@ -400,9 +400,21 @@
 			{
 				"name": "npc_dota_hero_skywrath_mage",
 				"id": 101
+			},
+			{
+				"name": "npc_dota_hero_abaddon",
+				"id": 102
+			},
+			{
+				"name": "npc_dota_hero_elder_titan",
+				"id": 103
+			},
+			{
+				"name": "npc_dota_hero_legion_commander",
+				"id": 104
 			}
 		]
 		,
-		"count": 100
+		"count": 103
 	}
 }
