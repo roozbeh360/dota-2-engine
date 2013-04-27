@@ -1,0 +1,111 @@
+/* Created by Artisteer v4.0.0.58475 */
+
+.clearfix {
+   zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).className="cleared");
+}
+
+.dte-textblock > div {
+   display: block;
+   line-height: normal;
+   zoom: 1;
+}
+
+.dte-header
+{
+   z-index: 1;
+}
+
+.dte-hmenu>li, .dte-hmenu>li>a
+{
+   display: inline !important;
+   zoom: 1;
+   float: none !important;
+   vertical-align: top;
+}
+ul.dte-hmenu, ul.dte-hmenu ul {
+   zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).className="cleared");
+}
+ul.dte-hmenu>li:first-child {
+   padding-right:7px;
+}
+ul.dte-hmenu>li{
+   zoom:expression(runtimeStyle.zoom=1,insertBefore(document.createElement('span'),firstChild).className='dte-hmenu-separator');
+}
+ul.dte-hmenu>li>span.dte-hmenu-separator
+{
+   position:absolute;
+   display: block;
+   top:0;
+   left:  -7px;
+   width: 7px;
+   height: 26px;
+   background: url('images/menuseparator.png') center center no-repeat;
+}
+ul.dte-hmenu>li:first-child>span.dte-hmenu-separator
+{
+   display:none;
+}
+
+ul.dte-hmenu ul{
+   background-color: #696969 !important;
+}
+
+.dte-content-layout, .dte-content-layout-row, .dte-layout-cell 
+{
+   display: block;
+   zoom: 1;
+}
+.dte-layout-cell
+{
+   position:relative;
+   float: left;
+   clear: right;
+}
+
+input[type="text"]
+{
+   margin:0 0 0 -3px;
+   zoom:expression(runtimeStyle.zoom = 1, parentNode.insertBefore(document.createElement('div'), this).appendChild(this));
+}
+
+* html input[type="text"]
+{
+   margin :0;
+}
+
+form.dte-search>input[type="text"]
+{
+   margin:0 0 0 -3px;
+   zoom:expression(runtimeStyle.zoom = 1, parentNode.insertBefore(document.createElement('div'), this).appendChild(this));
+}
+
+form.dte-search div>input[type="text"]
+{
+   width: 100%;
+}
+
+* html form.dte-search>input[type="text"] 
+{
+   margin :0;
+}
+
+.dte-postheadericons span{
+   zoom: 1;
+}
+.dte-postcontent {
+   height: 1%;
+}
+
+.close-alt, .arrow-right-alt, .arrow-left-alt {
+   display: block !important;
+}
+.cw, .ccw {
+   display: none !important;
+}
+
+.dte-content 
+{
+   width: auto;
+   float:none;
+}
+
