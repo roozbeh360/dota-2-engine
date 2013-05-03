@@ -27,7 +27,20 @@ class JsonHandler {
  
         throw new RuntimeException(static::$_messages[json_last_error()]);
     }
+	
+	public static function encodeToApi($value, $options = 0) {
+        $result = json_encode($value, $options);
  
+        if($result)  {
+		$result = '{
+	"result":'.$result.'
+}';
+            return $result;
+        }
+ 
+        throw new RuntimeException(static::$_messages[json_last_error()]);
+    }
+	
     public static function decode($json, $assoc = false) {
     	
         $result = json_decode($json, $assoc);
