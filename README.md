@@ -184,7 +184,7 @@ else echo 'not found' ;
 
 ?>
 ```
-the objects contain all data need for any process so only convert it to json data , use can use other api call in same way .
+the objects contain all data needed for any process so only convert it to json data , you can use other api call in same way .
 
 FAQ
 =============
