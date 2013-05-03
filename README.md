@@ -69,18 +69,38 @@ usage
 it's very easy just add engine.php to your php file and load objects .
 
 exp :
+```php
+<?php
 require_once 'engine.php' ;
 
 $doProcess = new doProcess();
 $match = $doProcess->fetchMatchDetailsById(1455138);
+if($match){
+	if($match->getRadiant_win() ) 
+	{
+		echo '<h3 align="center" style="color: #92a51b">Radiant win</h3>'; 
+	}
+	else echo '<h3 align="center" style="color: #c22f19">Dire win</h3>'; 
+	
+	echo '<h4 style="color: white;" text-align="center">';
+	if($match->getStart_time())
+		echo gmdate("Y-m-d  H:i:s ", $match->getStart_time());
+	else echo gmdate("Y-m-d TH:i:s ", $match->getStarttime());
+
+	echo ' Mode: '.$match->getGame_mode_name().' Duration: '.round(((int)$match->getDuration()/60)).' min'.'</h4>' ;
+	
+	if($match->getReplay_salt())
+	echo '<span style="float: right; font-size: 1.2em;"><a href="'.$match->getMatch_replay().'">Download Replay</a></span>'  ;
+}
 .
 .
 .
+// you can also see demo directory for more sample
+?>
+```
 
-
-
-for full documents see documention/index.html .
-or see core/repository/base/baseMatchDetails.class.php for get* functions you can use .
+### For full documents see documention/index.html .
+### Or see core/repository/base/baseMatchDetails.class.php for get* functions you can use .
 
 FAQ
 =============
