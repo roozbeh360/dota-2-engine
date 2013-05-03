@@ -16,14 +16,20 @@ please review license .
 
 install
 ======
-clone project , from command/bash line run :
-git clone https://github.com/roozbeh360/dota-2-engine.git dota2engine  
+#### clone project 
+ from command/bash line run :
+ 
+```php
+ git clone https://github.com/roozbeh360/dota-2-engine.git dota2engine  
+```
+#### or 
+ from command/bash line run :
 
-or 
-from command/bash line run :
+```php
 curl -s https://getcomposer.org/installer | php
 then 
 php composer.phar install
+```
 
 first of all you should enable these extentions in php.ini or on your host . 
 find these lines and remove ; from beginning . 
@@ -39,10 +45,13 @@ then you must get api key from valve :
 http://steamcommunity.com/dev/apikey
 
 at last edit action/config/config.php
+
+```php
     static public  $api_key = "key";
 clear 	key and write your api key .
+```
 
-Do not forget .
+#### Do not forget .
     static public $api_url = "http://api.steampowered.com/" ;
     static public $api_dota_name ="IDOTA2Match_205790";
 above lines is api url if you change http to https it will using https portocol to load data and it have more benefits than http like get more data from steam profiles .
