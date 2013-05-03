@@ -1,0 +1,19 @@
+{
+    "name": "Dota 2 Engine",
+    "description": "DotA 2 Web API PHP framework",
+    "license": "cc",
+    "type": "open-source framework",
+    "keywords": ["dota2", "api", "framework"],
+    "authors": [
+        {
+            "name": "Roozbeh Baabakaan",
+            "email": "baabakaan@remake.ir",
+            "homepage":"http://dota.remake.ir",
+            "role":"Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.2",
+		"roozbeh360/dota-2-engine": "master"
+    }
+}
