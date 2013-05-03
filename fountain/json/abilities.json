@@ -2017,6 +2017,42 @@
             {
             	"name": "bristleback_warpath",
             	"id": "5551"
+            },
+            {
+            	"name": "tusk_ice_shards",
+            	"id": "5565"
+            },
+            {
+            	"name": "tusk_snowball",
+            	"id": "5566"
+            },
+            {
+            	"name": "tusk_frozen_sigil",
+            	"id": "5567"
+            },
+            {
+            	"name": "tusk_walrus_punch",
+            	"id": "5568"
+            },
+            {
+            	"name": "elder_titan_echo_stomp",
+            	"id": "5589"
+            },
+            {
+            	"name": "elder_titan_echo_stomp_spirit",
+            	"id": "5590"
+            },
+            {
+            	"name": "elder_titan_ancestral_spirit",
+            	"id": "5591"
+            },
+            {
+            	"name": "elder_titan_return_spirit",
+            	"id": "5592"
+            },
+            {
+            	"name": "elder_titan_earth_splitter",
+            	"id": "5594"
             }
 			
             
