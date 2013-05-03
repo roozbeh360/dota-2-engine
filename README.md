@@ -102,6 +102,25 @@ if($match){
 ### For full documents see documention/index.html .
 ### Or see core/repository/base/baseMatchDetails.class.php for get* functions you can use .
 
+Api Support
+========
+|           Type               |                                    URL                                           |
+|------------------------------|----------------------------------------------------------------------------------|
+|        **Supported**         |                                                                                  |
+| GetMatchHistory              | https://api.steampowered.com/IDOTA2Match_570/GetMatchHistory/v001/               |
+| GetMatchDetails              | https://api.steampowered.com/IDOTA2Match_570/GetMatchDetails/v001/               |
+| GetPlayerSummaries           | https://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/                |
+| GetLeagueListing             | https://api.steampowered.com/IDOTA2Match_570/GetLeagueListing/v0001/             |
+| GetHeroes                    | Internal Use can be extended                                                     |
+| GetMatchHistoryBySequenceNum | https://api.steampowered.com/IDOTA2Match_570/GetMatchHistoryBySequenceNum/v0001/ |
+|       **Unsupported**        |                                                                                  |
+| EconomySchema                | https://api.steampowered.com/IEconItems_570/GetSchema/v0001/                     |
+|       **In future**
+| GetTeamInfoByTeamID          | https://api.steampowered.com/IDOTA2Match_570/GetTeamInfoByTeamID/v001/           |
+| GetLiveLeagueGames           | https://api.steampowered.com/IDOTA2Match_570/GetLiveLeagueGames/v0001/           |
+
+
+
 FAQ
 =============
 
