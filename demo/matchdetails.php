@@ -4,11 +4,11 @@ require_once '../engine.php' ; // as default it must always included
 
 // template helpers are just for giving you good implementation to build fast and better view . 
 // they are not core system just for help .
-require_once 'helpers/template/item.helper.php' ; 
-require_once 'helpers/template/position.helper.php' ; 
+require_once '../helpers/template/item.helper.php' ; 
+require_once '../helpers/template/position.helper.php' ; 
 
 // using analyze helper
-require_once 'helpers/analyze/analyze.helper.php' ; 
+require_once '../helpers/analyze/analyze.helper.php' ; 
 
 if(!isset($_POST['matchid']) && !isset($_GET['matchid'])) {echo 'not found';die();}  
 
