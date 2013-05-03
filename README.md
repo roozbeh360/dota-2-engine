@@ -19,6 +19,12 @@ install
 clone project , from command/bash line run :
 git clone https://github.com/roozbeh360/dota-2-engine.git dota2engine  
 
+or 
+from command/bash line run :
+curl -s https://getcomposer.org/installer | php
+then 
+php composer.phar install
+
 first of all you should enable these extentions in php.ini or on your host . 
 find these lines and remove ; from beginning . 
 
