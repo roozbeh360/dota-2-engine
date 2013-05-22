@@ -182,6 +182,33 @@ abstract class baseMatchDetails{
 		return $this->lobby_type ;
 	}
 	
+	public function getLobby_type_name()
+	{
+		switch ($this->lobby_type) {
+			case '0':
+				return 'Public matchmaking' ;
+				break;
+			case '1':
+				return 'Practise' ;
+				break;
+			case '2':
+				return 'Tournament' ;
+				break;
+			case '3':
+				return 'Tutorial' ;
+				break;
+			case '4':
+				return 'Co-op with bots' ;
+				break;
+			case '5':
+				return 'Team match' ;
+				break;
+			default:
+				return 'Invalid' ;
+				break;
+				}
+	}
+	
 	public function setHuman_players($human_players)
 	{
 		$this->human_players = $human_players ;
@@ -326,29 +353,47 @@ abstract class baseMatchDetails{
 	public function getGame_mode_name()
 	{
 		switch ($this->game_mode) {
-			case '1':
+			case '0':
 				return 'All Pick' ;
 				break;
-			case '3':
+			case '1':
 				return 'Single Draft' ;
 				break;
 			case '2':
-				return "Captain's Mode" ;
-				break;
-			case '4':
-				return 'Random Draft' ;
-				break;
-			case '6':
-				return 'Least Played' ;
-				break;	
-			case '5':
 				return 'All Random' ;
+				break;				
+			case '3':
+				return 'Random Draft' ;
 				break;	
+			case '4':
+				return 'Captain"s Draft' ;
+				break;
+			case '5':
+				return "Captain's Mode" ;
+				break;	
+			case '6':
+				return 'Death Mode' ;
+				break;
 			case '7':
-				return 'Reverse Draft' ;
+				return 'Diretide' ;
 				break;
 			case '8':
+				return 'Reverse Captain"s Mode' ;
+				break;
+			case '9':
+				return 'The Greeviling' ;
+				break;
+			case '10':
+				return 'Tutorial' ;
+				break;
+			case '11':
 				return 'Mid Only' ;
+				break;			
+			case '12':
+				return 'Least Played' ;
+				break;	
+			case '13':
+				return 'New Player Pool' ;
 				break;					
 			default:
 				return 'None' ;

@@ -30,8 +30,8 @@ if($match){
 		echo gmdate("Y-m-d  H:i:s ", $match->getStart_time());
 	else echo gmdate("Y-m-d TH:i:s ", $match->getStarttime());
 
-	echo ' Mode: '.$match->getGame_mode_name().' Duration: '.round(((int)$match->getDuration()/60)).' min'.'</h4>' ;
-	
+	echo ' Mode: '.$match->getGame_mode_name().' Duration: '.round(((int)$match->getDuration()/60)).' min ' ;
+	if($match->getLobby_type()) echo ' '." lobby: $match->getLobby_type_name()".'</h4>';
 	if($match->getReplay_salt())
 	echo '<span style="float: right; font-size: 1.2em;"><a href="'.$match->getMatch_replay().'">Download Replay</a></span>'  ;
 
