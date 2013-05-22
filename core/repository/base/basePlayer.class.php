@@ -12,6 +12,8 @@ abstract class basePlayer{
 	public $account_id ;
 	public $player_slot ;
 	public $hero_id ;
+	public $name; 
+	public $team;
 	public $item_0 ;
 	public $item_1 ;
 	public $item_2 ;
@@ -66,6 +68,28 @@ abstract class basePlayer{
 	{
 		return $this->hero_id ; 
 	}
+	
+	
+	public function setName($name)
+	{
+		$this->name = $name ; 
+	}
+	
+	public function getName()
+	{
+		return $this->name ; 
+	}
+
+	public function setTeam($team)
+	{
+		$this->team = $team ; 
+	}
+	
+	public function getTeam()
+	{
+		return $this->team ; 
+	}
+	
 	
 	public function setItem_0($item_0)
 	{

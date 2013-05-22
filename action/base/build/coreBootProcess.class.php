@@ -16,6 +16,7 @@ require_once dirname(__FILE__).'/../../../core/repository/matchHistory.class.php
 require_once dirname(__FILE__).'/../../../core/repository/player.class.php';
 require_once dirname(__FILE__).'/../../../core/repository/account.class.php';
 require_once dirname(__FILE__).'/../../../core/repository/league.class.php';
+require_once dirname(__FILE__).'/../../../core/repository/team.class.php';
 
 
 abstract class coreBootProcess
@@ -259,6 +260,123 @@ abstract class coreBootProcess
 			}
 		else return false ;		
 	}
+	
+	public static function buildLiveLeagueGames($query,$fast=true)
+	{
+		$jsonResponse = new curLoad($query,$fast);
+
+		if($jsonResponse->hasResponse() ) 
+			{
+				// decode json response to json object
+				$json_object = JsonHandler::decode($jsonResponse->getResponse()) ;	
+
+				$games_obj = $json_object->result->games ;
+				
+				$games = array();
+				$match_result = new matchDetails() ;
+				
+				foreach($games_obj as $dump_game)
+				{
+					$match_result = self::buildMatch($dump_game) ;
+					
+					$games[] = $match_result ;
+
+				}
+				return $games ;
+			}
+		else return false ;		
+	}
+	
+	public static function buildScheduledLeagueGames($query,$fast=true,$date_min=false,$date_max=false)
+	{
+		$jsonResponse = new curLoad($query,$fast);
+		$leagues = array() ;
+
+		if($jsonResponse->hasResponse() ) 
+			{
+				// decode json response to json object
+				$json_object = JsonHandler::decode($jsonResponse->getResponse()) ;	
+
+				$leaguelist = $json_object->result->leagues ;
+
+				foreach($leaguelist as $dump_league)
+				{
+					$league = new league();
+					foreach($dump_league as $leagueAttribute=>$leagueAttributeValue)
+					{
+
+						$method = 'set'.ucfirst($leagueAttribute) ;
+						$league->$method($leagueAttributeValue);
+
+					}
+					$leagues[] = $league ;
+
+				}
+				return $leagues ;
+			}
+		else return false ;		
+	}
+	
+	
+	public static function buildTeamInfoByTeamID($query,$fast=true)
+	{
+		$jsonResponse = new curLoad($query,$fast);
+
+		if($jsonResponse->hasResponse() ) 
+			{
+				// decode json response to json object
+				$json_object = JsonHandler::decode($jsonResponse->getResponse()) ;	
+
+				$results = $json_object->result ;
+				
+				$league = new league();
+				
+				foreach($results as $dumpAttribute=>$dumpAttributeValue)
+				{
+						
+						
+						
+					if($dumpAttribute=="teams")
+					{
+						$teams = array();
+						$results_array = $dumpAttributeValue;
+
+						foreach($results_array as $dumpTeam)
+						{
+							
+								$team = new team();	
+							foreach($dumpTeam as $teamAttribute=>$teamAttributeValue)
+							{
+							
+							if(strpos($teamAttribute, 'league_id',0)<-1)
+								{
+								$team_method = 'set'.ucfirst($teamAttribute) ;
+								$team->$team_method($teamAttributeValue);
+								
+								}
+							else
+								{
+								$team->setLast_league_id($teamAttributeValue) ;
+								}	
+							
+							}
+							$teams[] = $team; 
+						}
+						
+						$league->setTeams($teams) ;
+						
+					}
+					else{
+					$method = 'set'.ucfirst($dumpAttribute) ;
+					$league->$method($dumpAttributeValue);}
+					
+
+				}
+				return $league ;
+			}
+		else return false ;		
+	}
+	
 	
 }
 

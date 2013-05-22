@@ -13,6 +13,14 @@ abstract class baseLeague{
 	public $leagueid ;
 	public $description ;
 	public $tournament_url ;
+	public $game_id;
+	public $teams = array();
+	public $starttime;
+	public $comment;
+	public $final;
+	public $status;
+	public $statusDetail;
+
 
 	public function setName($name)
 	{
@@ -53,4 +61,85 @@ abstract class baseLeague{
 	{
 		return $this->tournament_url ; 
 	}
+	
+	public function setLeague_id($league_id)
+	{
+		$this->leagueid = $league_id ;
+	}
+
+	
+	public function setGame_id($game_id)
+	{
+		$this->game_id = $game_id ;
+	}
+
+	public function getGame_id()
+	{
+		return $this->game_id ; 
+	}
+	
+	public function setTeams($array)
+	{
+		foreach($array as $object)
+		{
+			$team = $object;
+			$this->teams[] = $team ;
+		}
+	}
+
+	public function getTeams()
+	{
+		return $this->teams ; 
+	}
+	
+	public function setStarttime($starttime)
+	{
+		$this->starttime = $starttime ;
+	}
+
+	public function getStarttime()
+	{
+		return $this->starttime ; 
+	}
+	
+	public function setComment($comment)
+	{
+		$this->comment = $comment ;
+	}
+
+	public function getComment()
+	{
+		return $this->comment ; 
+	}
+	
+	public function setFinal($final)
+	{
+		$this->final = $final ;
+	}
+
+	public function getFinal()
+	{
+		return $this->final ; 
+	}
+	
+	public function setStatus($status)
+	{
+		$this->status = $status ;
+	}
+
+	public function getStatus()
+	{
+		return $this->status ; 
+	}
+	
+	public function setStatusDetail($statusDetail)
+	{
+		$this->statusDetail = $statusDetail ;
+	}
+
+	public function getStatusDetail()
+	{
+		return $this->statusDetail ; 
+	}
+	
 }

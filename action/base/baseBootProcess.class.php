@@ -95,4 +95,31 @@ abstract class BaseDoProcess extends coreBootProcess
 		$query = config::$api_url.config::$api_dota_name.'/'.config::$api_league_listing.'/'.config::$api_version[0].'/?'.'key='.config::$api_key;
 		return self::buildLeagueListing($query) ;
 	}
+	
+	public function fetchLiveLeagueGames()
+	{		
+		// request league listing using api
+		$query = config::$api_url.config::$api_dota_name.'/'.config::$api_live_league_games.'/'.config::$api_version[0].'/?'.'key='.config::$api_key;
+		return self::buildLiveLeagueGames($query) ;
+	}
+	
+	public function fetchScheduledLeagueGames($date_min=false,$date_max=false)
+	{		
+		// request league listing using api
+		$query = config::$api_url.config::$api_dota_name.'/'.config::$api_scheduled_league_games.'/'.config::$api_version[0].'/?'.'key='.config::$api_key;
+		if($date_min) $query.'&date_min='.$date_min ;
+		if($date_max) $query.'&date_max='.$date_max ;
+		
+		return self::buildScheduledLeagueGames($query) ;
+	}
+	
+	public function fetchTeamInfoByTeamID($start_at_team_id =false,$start_at_team_id =false)
+	{		
+		// request league listing using api
+		$query = config::$api_url.config::$api_dota_name.'/'.config::$api_team_info_by_team_id.'/'.config::$api_version[0].'/?'.'key='.config::$api_key;
+		if($start_at_team_id) $query.'&start_at_team_id='.$start_at_team_id ;
+		if($start_at_team_id) $query.'&start_at_team_id='.$start_at_team_id ;
+		
+		return self::buildTeamInfoByTeamID($query) ;
+	}
 }

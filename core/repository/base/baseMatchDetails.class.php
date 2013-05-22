@@ -39,6 +39,12 @@ abstract class baseMatchDetails{
 	public $picks_bans ;
 	public $radiant_team_id;
 	public $dire_team_id ;
+	public $radiant_team ;
+	public $dire_team;
+	public $lobby_id;
+	public $spectators;
+	public $tower_state;
+	public $league_id;
 	
 	public function setPlayers($array)
 	{
@@ -430,5 +436,63 @@ abstract class baseMatchDetails{
 	{
 		return $this->dire_team_id ;
 	}
+	
+	public function setRadiant_team($radiant_team)
+	{
+		$this->radiant_team =  $radiant_team;
+	}
+	
+	public function getRadiant_team()
+	{
+		return $this->radiant_team ;
+	}
+	
+	public function setDire_team($dire_team)
+	{
+		$this->dire_team = $dire_team ;
+	}
+	
+	public function getDire_team()
+	{
+		return $this->dire_team ;
+	}
+	
+	public function setLobby_id($lobby_id)
+	{
+		$this->lobby_id =  $lobby_id;
+	}
+	
+	public function getLobby_id()
+	{
+		return $this->lobby_id ;
+	}
+	public function setSpectators($spectators)
+	{
+		$this->spectators =  $spectators;
+	}
+	
+	public function getSpectators()
+	{
+		return $this->spectators ;
+	}
+	public function setTower_state($tower_state)
+	{
+		$this->tower_state = $tower_state ;
+	}
+	
+	public function getTower_state()
+	{
+		return $this->tower_state ;
+	}
+	public function setLeague_id($league_id)
+	{
+		$this->league_id = $league_id ;
+	}
+	
+	public function getLeague_id()
+	{
+		return $this->league_id ;
+	}
+	
 	
 }

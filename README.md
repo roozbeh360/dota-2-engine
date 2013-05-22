@@ -1,7 +1,7 @@
 dota-2-engine
 =============
 
-VERSION 1.4.25 beta
+VERSION 1.7.28 beta
 =============
 
 about dota 2 api framework . see demo below and please use latest browsers .
@@ -113,11 +113,14 @@ Api Support
 | GetLeagueListing             | https://api.steampowered.com/IDOTA2Match_570/GetLeagueListing/v0001/             |
 | GetHeroes                    | Internal Use can be extended                                                     |
 | GetMatchHistoryBySequenceNum | https://api.steampowered.com/IDOTA2Match_570/GetMatchHistoryBySequenceNum/v0001/ |
+| GetTeamInfoByTeamID          | https://api.steampowered.com/IDOTA2Match_570/GetTeamInfoByTeamID/v001/           |
+| GetLiveLeagueGames           | https://api.steampowered.com/IDOTA2Match_570/GetLiveLeagueGames/v0001/           |
+| GetScheduledLeagueGames      | https://api.steampowered.com/IDOTA2Match_570/GetScheduledLeagueGames/v001/       | 
 |       **Unsupported**        |                                                                                  |
 | EconomySchema                | https://api.steampowered.com/IEconItems_570/GetSchema/v0001/                     |
 |       **In future**
-| GetTeamInfoByTeamID          | https://api.steampowered.com/IDOTA2Match_570/GetTeamInfoByTeamID/v001/           |
-| GetLiveLeagueGames           | https://api.steampowered.com/IDOTA2Match_570/GetLiveLeagueGames/v0001/           |
+|                              | 											                     		          |
+|                              |                                                                                  |
 
 For Expert Developers 
 ==========
