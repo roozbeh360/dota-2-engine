@@ -72,8 +72,8 @@ foreach($players as $player)
 	echo '</td>';
 	
 	echo '<td style="max-width:274px">' ;
-	echo  $player->getHero()->getName(),' ',
-	$slotPosition->renderFullPosition($player->getPlayer_slot(),$player->getHero()->getThumbnail_image(),'heroImage'),' ';
+	if($player->getHero() ) {echo  $player->getHero()->getName().' ' ;
+	echo $slotPosition->renderFullPosition($player->getPlayer_slot(),$player->getHero()->getThumbnail_image(),'heroImage'),' ';}
 	
 	$abilities = $player->getAbilities() ;
 	if($abilities)
