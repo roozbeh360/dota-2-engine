@@ -30,7 +30,7 @@ abstract class baseAccount
 	public $loccityid ;
 	public $gameid ;
 	public $gameserversteamid ;
-	
+	public $personastateflags;
 		
 	public function setSteamid($steamid)
 	{
@@ -234,6 +234,15 @@ abstract class baseAccount
 	public function getGameserversteamid()
 	{
 		return $this->gameserversteamid ;
+	}
+	
+	public function setPersonastateflags($personastateflags)
+	{
+		$this->personastateflags = $personastateflags ;
+	}
+	public function getPersonastateflags()
+	{
+		return $this->personastateflags ;
 	}
 }
 
