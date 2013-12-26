@@ -1,7 +1,7 @@
 dota-2-engine
 =============
 
-VERSION 1.7.29 beta
+VERSION 1.7.30 beta
 =============
 
 about dota 2 api framework . see demo below and please use latest browsers .
