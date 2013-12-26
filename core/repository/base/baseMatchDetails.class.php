@@ -209,6 +209,9 @@ abstract class baseMatchDetails{
 			case '5':
 				return 'Team match' ;
 				break;
+			case 'None':
+				return 'None' ;
+				break;	
 			default:
 				return 'Invalid' ;
 				break;
