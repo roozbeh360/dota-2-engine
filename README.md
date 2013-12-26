@@ -5,7 +5,7 @@ VERSION 1.7.30 beta
 =============
 
 about dota 2 api framework . see demo below and please use latest browsers .
-demo : http://dota.remake.ir/
+demo : demo/
 ======
 
 this framework based on dota 2 api (http://www.dota2wiki.com/wiki/API) and php language .
